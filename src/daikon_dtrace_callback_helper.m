@@ -3,10 +3,11 @@
 %
 %
 function [out] = daikon_dtrace_callback_helper(block, eventData, opt_multi)
-    global daikon_dtrace_open daikon_dtrace_blocks_done_all daikon_dtrace_blocks_done daikon_dtrace_blocks;
+    global daikon_dtrace_open daikon_dtrace_blocks_done_all daikon_dtrace_blocks_done daikon_dtrace_blocks iotype_input iotype_output;
     opt_time = 1;
     opt_namereal = 1;
     opt_time_major_only = 1; % on = faster, only checks at major time steps, see the simulation loop steps, e.g.: http://www.mathworks.com/help/simulink/sfg/how-s-functions-work.html
+    opt_dataflow = 1; % 1 = dataflow on (program points in hierarchy), 0 = dataflow off (just assume all program points are unit traces)
     
     if ~opt_time_major_only || block.IsMajorTimeStep
         
@@ -73,8 +74,10 @@ function [out] = daikon_dtrace_callback_helper(block, eventData, opt_multi)
             else
                 simData(i).varname = ['x_out', num2str(i)];
             end
+            simData(i).iotype = iotype_output;
             simData(i).type = block.OutputPort(i).Datatype;
             simData(i).length = block.OutputPort(i).Dimensions;
+            simData(i).eventType = eventData.type;
             
             Nvars = Nvars + 1;
         end
@@ -88,110 +91,14 @@ function [out] = daikon_dtrace_callback_helper(block, eventData, opt_multi)
             else
                 simData(Nvars + 1).varname = ['x_in', num2str(i)];
             end
+            simData(Nvars + 1).iotype = iotype_input;
             simData(Nvars + 1).type = block.InputPort(i).Datatype;
             simData(Nvars + 1).length = block.InputPort(i).Dimensions;
+            simData(i).eventType = eventData.type;
             
             Nvars = Nvars + 1;
         end
-
-        simTimeRep = strrep(sprintf('%.10f', simTime), '.', '_');
         
-        if opt_multi
-            ppt_name = [model_block_name_daikon, ':::POINT_t'];
-        else
-            ppt_name = [model_block_name_daikon, ':::POINT_t', simTimeRep];
-        end
-
-        if opt_multi
-            output_filename = ['output_', simTimeRep, '_', model_block_name_daikon, '.dtrace'];
-            daikon_dtrace_startup(output_filename);
-        end
-
-        daikon.Runtime.dtrace.println(['ppt ..', ppt_name]);
-        daikon.Runtime.dtrace.println('  ppt-type point');
-        if opt_time
-            daikon.Runtime.dtrace.println('  variable ::time');
-            daikon.Runtime.dtrace.println('    var-kind variable');
-            daikon.Runtime.dtrace.println('    rep-type double');
-            daikon.Runtime.dtrace.println('    dec-type double');
-            daikon.Runtime.dtrace.println('    comparability 1');
-        end
-
-        for i = 1 : Nvars
-            % arrays
-            if simData(i).length > 1
-%    var-kind array
-%    enclosing-var b
-%    array 1
-%    rep-type int[]
-%    dec-type int[]      
-                daikon.Runtime.dtrace.println(['  variable ::', simData(i).varname, '[..]']);
-                daikon.Runtime.dtrace.println(['    var-kind array']);
-                daikon.Runtime.dtrace.println(['    enclosing-var ::time']); % TODO
-                %daikon.Runtime.dtrace.println(['    enclosing-var ::', simData(i).varname]);
-                daikon.Runtime.dtrace.println(['    array 1']);
-                daikon.Runtime.dtrace.println(['    rep-type ', simData(i).type, '[]']);
-                daikon.Runtime.dtrace.println(['    dec-type ', simData(i).type, '[]']);
-            else
-                daikon.Runtime.dtrace.println(['  variable ::', simData(i).varname]);
-                daikon.Runtime.dtrace.println('    var-kind variable');
-                daikon.Runtime.dtrace.println(['    rep-type ', simData(i).type]);
-                daikon.Runtime.dtrace.println(['    dec-type ', simData(i).type]);
-            end
-            %daikon.Runtime.dtrace.println('    rep-type double');
-            %daikon.Runtime.dtrace.println('    dec-type double');
-            % TODO NEXT: figure out comparability meaning (was i + opt_time)
-            %daikon.Runtime.dtrace.println(['    comparability ', num2str(1 + opt_time)]); % possibly bad style, works for opt_time in [0,1]
-            daikon.Runtime.dtrace.println(['    comparability 1']);
-        end
-
-
-    %     daikon.Runtime.dtrace.println('time:');
-    %     daikon.Runtime.dtrace.println(num2str(simTime));
-    %     daikon.Runtime.dtrace.println('variable:');
-    %     daikon.Runtime.dtrace.println(num2str(simData));
-        daikon.Runtime.dtrace.println();
-        daikon.Runtime.dtrace.println(['..', ppt_name]);
-        if opt_time
-            daikon.Runtime.dtrace.println('::time');
-            daikon.Runtime.dtrace.println(num2str(simTime));
-            daikon.Runtime.dtrace.println('1'); % always set as modified
-        end
-        for i = 1 : Nvars
-            if simData(i).length > 1
-                daikon.Runtime.dtrace.println(['::', simData(i).varname, '[..]']);
-                daikon.Runtime.dtrace.print('[ ');
-                
-                % val will be a pointer to the data
-                for j = 1 : simData(i).length
-                    daikon.Runtime.dtrace.print(num2str(simData(i).val(j)));
-                    daikon.Runtime.dtrace.print(' ');
-                end
-                daikon.Runtime.dtrace.println(' ]'); % newline
-            else
-                daikon.Runtime.dtrace.println(['::', simData(i).varname]);
-                daikon.Runtime.dtrace.println(num2str(simData(i).val));
-            end
-            daikon.Runtime.dtrace.println('1'); % always set as modified
-        end
-        daikon.Runtime.dtrace.println();
-        
-        if opt_multi
-            daikon_dtrace_shutdown(model_block_name);
-        end
+        daikon_dtrace_write_trace(model_block_name_daikon, simTime, simData, opt_dataflow, opt_multi, opt_time);
     end
-    
-    
-%     daikon.Runtime.dtrace.println();
-%     daikon.Runtime.dtrace.println('heaterLygeros:::EXIT');
-%     daikon.Runtime.dtrace.println('time');
-%     daikon.Runtime.dtrace.println(num2str(simTime));
-%     daikon.Runtime.dtrace.println('1'); % always set as modified
-%     daikon.Runtime.dtrace.println('x');
-%     daikon.Runtime.dtrace.println(num2str(simData));
-%     daikon.Runtime.dtrace.println('1'); % always set as modified
-%     %daikon.Runtime.dtrace.println('return');
-%     %daikon.Runtime.dtrace.println(simData);
-%     
-    % see: http://www.mathworks.com/help/simulink/slref/add_exec_event_listener.html
-    end
+end

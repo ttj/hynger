@@ -10,12 +10,15 @@ import  daikon.Runtime.dtrace.*;
 %import daikon.derive.*;
 %import daikon.derive.binary.*;
 
-global daikon_dtrace_open daikon_dtrace_blocks_done_all daikon_dtrace_blocks_done daikon_dtrace_blocks;
+global daikon_dtrace_open daikon_dtrace_blocks_done_all daikon_dtrace_blocks_done daikon_dtrace_blocks iotype_output iotype_input;
 
 daikon_dtrace_open = 0;
 
 opt_multi = 1; % 1 = create multiple Daikon trace files, 0 = create a single large trace file over the entire simulation
 opt_trivial_example = 0; % first trivial example to test Daikon Java library loading (to delete)
+
+iotype_input = 1;
+iotype_output = 2;
 
 if opt_trivial_example
     daikon.Runtime.dtrace.println();
@@ -95,12 +98,16 @@ for i_model = 1 : length(models_block)
     %blk
     blk = model_block;
 
-    % add callback
+    % add callback to log data during execution (potentially at every
+    % simulation time step)
+    % see: http://www.mathworks.com/help/simulink/slref/add_exec_event_listener.html
     if opt_multi
         % NOTE: this must be assigned to unique objects, otherwise the
         % callback will not be set properly (e.g., it may always be the
         % last block set instead of all blocks)
         h(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
+        h(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs_multi);
+        %h(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
         %h(i_model) = add_exec_event_listener(blk, 'PostUpdate',
         %@daikon_dtrace_callback_postoutputs_multi); % doesn't work, post
         %is very infrequent
