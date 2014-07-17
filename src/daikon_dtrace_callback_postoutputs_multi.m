@@ -6,15 +6,15 @@ function [out] = daikon_dtrace_callback_postoutputs_multi(block, eventData)
     %eventData
     %block
     opt_multi = 1;
-    %daikon_dtrace_callback_helper(block, eventData, opt_multi);
+    daikon_dtrace_callback_helper(block, eventData, opt_multi);
     
     %eventData.EventName
     %eventData.Source
     %eventData.EventData
     %eventData
-    eventData.type
+    %eventData.type
     
-    for i = 1 : block.NumOutputPorts
-        block.OutputPort(i).Data
-    end
+    %for i = 1 : block.NumOutputPorts
+    %    block.OutputPort(i).Data
+    %end
 end
