@@ -21,7 +21,7 @@ function [out] = daikon_dtrace_startup(output_trace_filename)
 
         daikon.Runtime.dtrace.println('input-language Simulink/Stateflow');
         daikon.Runtime.dtrace.println('decl-version 2.0');
-        daikon.Runtime.dtrace.println('var-comparability implicit');
+        daikon.Runtime.dtrace.println('var-comparability implicit'); % TODO: explicit?
         daikon.Runtime.dtrace.println();
     end
 end
