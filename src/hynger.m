@@ -51,10 +51,11 @@ models_all = find_system(model_filename); % note: model must be opened
 % input, but not both?
 for i_model = 1 : length(models_all)
     model_block = char(models_all(i_model));
+    
     try
         input_names = get_param(model_block, 'InputSignalNames');
         output_names = get_param(model_block, 'OutputSignalNames');
-        
+
         % output
         if length(output_names) > 0
         % input and output
@@ -91,7 +92,7 @@ blk_root = model_filename;
 set_param(bdroot,'SimulationCommand','start');
 set_param(bdroot,'SimulationCommand','pause');
 
-rto = get_param(gcb,'RuntimeObject');
+%rto = get_param(gcb,'RuntimeObject');
 
 for i_model = 1 : length(models_block)
     model_block = char(models_block(i_model));
@@ -99,7 +100,7 @@ for i_model = 1 : length(models_block)
     
     %blk
     blk = model_block;
-
+    if strcmp(get_param(blk, 'Commented'), 'off')
     % add callback to log data during execution (potentially at every
     % simulation time step)
     % see: http://www.mathworks.com/help/simulink/slref/add_exec_event_listener.html
@@ -117,6 +118,7 @@ for i_model = 1 : length(models_block)
         output_filename = 'output.dtrace';
         daikon_dtrace_startup(output_filename);
         h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
+    end
     end
 end
 

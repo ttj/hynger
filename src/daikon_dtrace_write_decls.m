@@ -12,7 +12,7 @@ function [out] = daikon_dtrace_write_decls(model_block_name_daikon, simTime, sim
         if opt_dataflow
             switch i_ppt
                 case iotype_output
-                    daikon.Runtime.dtrace.println('  ppt-type exit');
+                    daikon.Runtime.dtrace.println('  ppt-type subexit');
                 case iotype_input
                     daikon.Runtime.dtrace.println('  ppt-type enter');
                 otherwise
@@ -45,13 +45,13 @@ function [out] = daikon_dtrace_write_decls(model_block_name_daikon, simTime, sim
                     daikon.Runtime.dtrace.println(['    enclosing-var ::time']); % TODO
                     %daikon.Runtime.dtrace.println(['    enclosing-var ::', simData(i).varname]);
                     daikon.Runtime.dtrace.println(['    array 1']);
-                    daikon.Runtime.dtrace.println(['    rep-type ', simData(i).type, '[]']);
-                    daikon.Runtime.dtrace.println(['    dec-type ', simData(i).type, '[]']);
+                    daikon.Runtime.dtrace.println(['    rep-type ', matlab_type_to_daikon_type(simData(i).type), '[]']);
+                    daikon.Runtime.dtrace.println(['    dec-type ', matlab_type_to_daikon_type(simData(i).type), '[]']);
                 else
                     daikon.Runtime.dtrace.println(['  variable ::', simData(i).varname]);
                     daikon.Runtime.dtrace.println('    var-kind variable');
-                    daikon.Runtime.dtrace.println(['    rep-type ', simData(i).type]);
-                    daikon.Runtime.dtrace.println(['    dec-type ', simData(i).type]);
+                    daikon.Runtime.dtrace.println(['    rep-type ', matlab_type_to_daikon_type(simData(i).type)]);
+                    daikon.Runtime.dtrace.println(['    dec-type ', matlab_type_to_daikon_type(simData(i).type)]);
                 end
                 %daikon.Runtime.dtrace.println('    rep-type double');
                 %daikon.Runtime.dtrace.println('    dec-type double');
