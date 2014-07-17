@@ -14,6 +14,8 @@ global daikon_dtrace_open daikon_dtrace_blocks_done_all daikon_dtrace_blocks_don
 
 daikon_dtrace_open = 0;
 
+opt_dataflow = 1;
+opt_time = 1;
 opt_multi = 1; % 1 = create multiple Daikon trace files, 0 = create a single large trace file over the entire simulation
 opt_trivial_example = 0; % first trivial example to test Daikon Java library loading (to delete)
 
@@ -105,8 +107,8 @@ for i_model = 1 : length(models_block)
         % NOTE: this must be assigned to unique objects, otherwise the
         % callback will not be set properly (e.g., it may always be the
         % last block set instead of all blocks)
-        h(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
-        h(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs_multi);
+        h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs_multi);
+        h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
         %h(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
         %h(i_model) = add_exec_event_listener(blk, 'PostUpdate',
         %@daikon_dtrace_callback_postoutputs_multi); % doesn't work, post
@@ -114,7 +116,7 @@ for i_model = 1 : length(models_block)
     else
         output_filename = 'output.dtrace';
         daikon_dtrace_startup(output_filename);
-        h(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
+        h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
     end
 end
 
