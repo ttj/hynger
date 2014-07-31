@@ -55,7 +55,7 @@ switch mode
         Vref = 48;
         C = 2.2e-3;
         L = 2.65e-3;
-        R=10;
+        R=5; % was 10
         rs=3.5;% switching loss
         rL=520e-3;% ESR inductor loss
         Tmax = T*1800;% 

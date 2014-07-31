@@ -16,7 +16,7 @@ daikon_dtrace_open = 0;
 
 opt_dataflow = 1;
 opt_time = 1;
-opt_multi = 1; % 1 = create multiple Daikon trace files, 0 = create a single large trace file over the entire simulation
+opt_multi = 0; % 1 = create multiple Daikon trace files, 0 = create a single large trace file over the entire simulation
 opt_trivial_example = 0; % first trivial example to test Daikon Java library loading (to delete)
 
 iotype_input = 1;
@@ -92,6 +92,11 @@ blk_root = model_filename;
 set_param(bdroot,'SimulationCommand','start');
 set_param(bdroot,'SimulationCommand','pause');
 
+if ~opt_multi
+    output_filename = 'output.dtrace';
+    daikon_dtrace_startup(output_filename);
+end
+
 %rto = get_param(gcb,'RuntimeObject');
 
 for i_model = 1 : length(models_block)
@@ -100,25 +105,25 @@ for i_model = 1 : length(models_block)
     
     %blk
     blk = model_block;
+    % ignore commented blocks
     if strcmp(get_param(blk, 'Commented'), 'off')
-    % add callback to log data during execution (potentially at every
-    % simulation time step)
-    % see: http://www.mathworks.com/help/simulink/slref/add_exec_event_listener.html
-    if opt_multi
-        % NOTE: this must be assigned to unique objects, otherwise the
-        % callback will not be set properly (e.g., it may always be the
-        % last block set instead of all blocks)
-        h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs_multi);
-        h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
-        %h(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
-        %h(i_model) = add_exec_event_listener(blk, 'PostUpdate',
-        %@daikon_dtrace_callback_postoutputs_multi); % doesn't work, post
-        %is very infrequent
-    else
-        output_filename = 'output.dtrace';
-        daikon_dtrace_startup(output_filename);
-        h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
-    end
+        % add callback to log data during execution (potentially at every
+        % simulation time step)
+        % see: http://www.mathworks.com/help/simulink/slref/add_exec_event_listener.html
+        if opt_multi
+            % NOTE: this must be assigned to unique objects, otherwise the
+            % callback will not be set properly (e.g., it may always be the
+            % last block set instead of all blocks)
+            h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs_multi);
+            h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
+            %h(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
+            %h(i_model) = add_exec_event_listener(blk, 'PostUpdate',
+            %@daikon_dtrace_callback_postoutputs_multi); % doesn't work, post
+            %is very infrequent
+        else
+            h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs);
+            h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
+        end
     end
 end
 
@@ -140,6 +145,19 @@ get_param(bdroot,'SimulationStatus')
 set_param(bdroot,'SimulationCommand','continue');
 %set_param(bdroot,'SimulationCommand','stop');
 
+% wait here until simulation done
+% TODO: convert this wait into an appropriate event handelr function that
+% gets called when the simulation stops to shut things down
+% TODO: but this shutdown will need to know extra information, such as
+% daikon tracing is on, etc. (e.g., check the bit like
+% daikon.Runtime.no_dtrace is false, which implies there is a dtrace open)
+while ~strcmp(get_param(bdroot,'SimulationStatus'), 'stopped')
+    pause(0.01);
+end
+
+% WARNING: don't shutdown file handler until stopped
+% if file size is small, this shutdown may be actually getting called
+% prematurely
 if ~opt_multi
     daikon_dtrace_shutdown();
 end

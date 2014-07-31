@@ -23,4 +23,6 @@ function [out] = daikon_dtrace_shutdown(model_block_name)
         daikon_dtrace_open = 0;
         %pause(0.01);
     %end
+    
+    'shutdown Daikon tracing'
 end
