@@ -37,8 +37,9 @@ all_base_vars = Simulink.WorkspaceVar(who, 'base workspace');
 
 count = 0;
 
+model_filename = 'pendulum';
 %model_filename = 'buck_hvoltage';
-model_filename = 'buck_hvoltage_discrete';
+%model_filename = 'buck_hvoltage_discrete';
 %model_filename = 'heaterLygeros';
 
 % TODO: find all blocks in parent chart
@@ -92,6 +93,10 @@ blk_root = model_filename;
 set_param(bdroot,'SimulationCommand','start');
 set_param(bdroot,'SimulationCommand','pause');
 
+while ~strcmp(get_param(bdroot,'SimulationStatus'), 'paused')
+    pause(0.01);
+end
+
 if ~opt_multi
     output_filename = 'output.dtrace';
     daikon_dtrace_startup(output_filename);
@@ -121,8 +126,14 @@ for i_model = 1 : length(models_block)
             %@daikon_dtrace_callback_postoutputs_multi); % doesn't work, post
             %is very infrequent
         else
+            try
             h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs);
+            catch
+            end
+            try
             h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
+            catch
+            end
         end
     end
 end
