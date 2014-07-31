@@ -5,7 +5,7 @@ function [out] = daikon_dtrace_write_decls(model_block_name_daikon, simTime, sim
     
     if daikon.Runtime.dtrace.checkError()
         'Error: file stream problem'
-        daikon.Runtime.dtrace.flush()
+        daikon.Runtime.dtrace.flush();
         %daikon.Runtime.dtrace.clearError() % not accessible
     %else
         %daikon.Runtime.dtrace.println('no stream error');
@@ -41,6 +41,9 @@ function [out] = daikon_dtrace_write_decls(model_block_name_daikon, simTime, sim
         %simData(i).iotype == i_ppt
         %if (opt_dataflow == 0) || (opt_dataflow == 1 && simData(i).iotype == i_ppt)
 
+        % TODO: this does not properly handle matrices, but it handles
+        % arrays fine (example showed up in pendulum)
+        
             % arrays
             if simData(i).length > 1
                 daikon.Runtime.dtrace.println(['  variable ::', simData(i).varname, '[..]']);
