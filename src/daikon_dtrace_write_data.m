@@ -40,7 +40,6 @@ function [out] = daikon_dtrace_write_data(simTime, simData, ppt_name, opt_datafl
         end
         daikon.Runtime.dtrace.println();
     
-    
 %     daikon.Runtime.dtrace.println();
 %     daikon.Runtime.dtrace.println('heaterLygeros:::EXIT');
 %     daikon.Runtime.dtrace.println('time');
