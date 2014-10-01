@@ -37,10 +37,12 @@ all_base_vars = Simulink.WorkspaceVar(who, 'base workspace');
 
 count = 0;
 
-model_filename = 'pendulum';
+%model_filename = 'pendulum';
 %model_filename = 'buck_hvoltage';
 %model_filename = 'buck_hvoltage_discrete';
 %model_filename = 'heaterLygeros';
+
+model_filename = 'slexAircraftPitchControlExample';
 
 % TODO: find all blocks in parent chart
 %models_block = {'DC-to-DC Converter', 'Sensor', 'Controller'};
@@ -74,6 +76,7 @@ open_system(['..', filesep, 'example', filesep, model_filename]);
 % get all variables for a given block
 base_vars = Simulink.findVars(model_filename, 'WorkspaceType','base');
 
+i_model_bad = 0;
 i_model = 1;
 % iterate through every block and get all their variables
 for i_model = 1 : length(models_block)
@@ -82,7 +85,11 @@ for i_model = 1 : length(models_block)
     model_path = model_block;
     %model_ref = find_system(model_path);
     
-    block_data(i_model).vars = Simulink.findVars(model_path, 'WorkSpaceType', 'base');
+    try
+        block_data(i_model - i_model_bad).vars = Simulink.findVars(model_path, 'WorkSpaceType', 'base');
+    catch
+        i_model_bad = i_model_bad + 1;
+    end
     i_model = i_model + 1;
 end
 
