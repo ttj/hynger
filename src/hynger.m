@@ -14,8 +14,8 @@ global daikon_dtrace_open daikon_dtrace_blocks_done_all daikon_dtrace_blocks_don
 
 daikon_dtrace_open = 0;
 
-opt_dataflow = 1;
-opt_time = 1;
+opt_dataflow = 1; % 
+opt_time = 1; % 1 = include time variable, 0 = do not
 opt_multi = 0; % 1 = create multiple Daikon trace files, 0 = create a single large trace file over the entire simulation
 opt_trivial_example = 0; % first trivial example to test Daikon Java library loading (to delete)
 
@@ -33,22 +33,32 @@ end
 % instrument the simulink diagram automatically using appropriate event /
 % time advance listeners)
 
-all_base_vars = Simulink.WorkspaceVar(who, 'base workspace');
+%all_base_vars = Simulink.WorkspaceVar(who, 'base workspace'); % deprecated
+all_base_vars = Simulink.VariableUsage(who, 'base workspace');
 
 count = 0;
 
 %model_filename = 'pendulum';
 %model_filename = 'buck_hvoltage';
-%model_filename = 'buck_hvoltage_discrete';
+model_filename = 'buck_hvoltage_discrete';
 %model_filename = 'heaterLygeros';
 
-model_filename = 'slexAircraftPitchControlExample';
+
+%model_filename = 'arch2014jin_AbstractFuelControl_M1_Aquino';
+%model_filename = 'arch2014jin_AbstractFuelControl_M2';
+
+% examples from staliro
+%model_filename = 'staliro/heat25830_staliro_01';
+%model_filename = 'heat25830_staliro_01';
+
+%model_filename = 'slexAircraftPitchControlExample';
 
 % TODO: find all blocks in parent chart
 %models_block = {'DC-to-DC Converter', 'Sensor', 'Controller'};
 models_block = {};
 
 % TODO: open the model file
+model_filename
 models_all = find_system(model_filename); % note: model must be opened
 % filter out constants, etc., or maybe just blocks that have only output or
 % input, but not both?
@@ -63,7 +73,8 @@ for i_model = 1 : length(models_all)
         if length(output_names) > 0
         % input and output
         %if length(input_names) > 0 && length(output_names) > 0
-            models_block = cat(1,models_block,cellstr(model_block));
+            %models_block = cat(1,models_block,cellstr(model_block));
+            models_block = cat(1,models_block,model_block);
         end
     catch
     end
@@ -72,6 +83,7 @@ end
 daikon_dtrace_blocks = length(models_block);
 
 open_system(['..', filesep, 'example', filesep, model_filename]);
+%open_system(['..', filesep, 'example', filesep, 'staliro', filesep, model_filename]);
 
 % get all variables for a given block
 base_vars = Simulink.findVars(model_filename, 'WorkspaceType','base');
@@ -88,6 +100,7 @@ for i_model = 1 : length(models_block)
     try
         block_data(i_model - i_model_bad).vars = Simulink.findVars(model_path, 'WorkSpaceType', 'base');
     catch
+        'error'
         i_model_bad = i_model_bad + 1;
     end
     i_model = i_model + 1;
@@ -112,7 +125,8 @@ end
 %rto = get_param(gcb,'RuntimeObject');
 
 for i_model = 1 : length(models_block)
-    model_block = char(models_block(i_model));
+    model_block = models_block(i_model);
+    %model_block = char(models_block(i_model));
     %blk = [blk_root, '/', char(model_block)];
     
     %blk
@@ -133,13 +147,18 @@ for i_model = 1 : length(models_block)
             %@daikon_dtrace_callback_postoutputs_multi); % doesn't work, post
             %is very infrequent
         else
+            blk = char(blk); % requires char at this point...
             try
-            h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs);
-            catch
+                h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs);
+            catch ex
+                'error: adding pre handler'
+                ex
             end
             try
-            h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
-            catch
+                h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
+            catch ex
+                'error: adding post handler'
+                ex
             end
         end
     end

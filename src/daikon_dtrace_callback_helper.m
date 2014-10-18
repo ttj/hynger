@@ -5,7 +5,7 @@
 function [out] = daikon_dtrace_callback_helper(block, eventData, opt_multi)
     global daikon_dtrace_open daikon_dtrace_blocks_done_all daikon_dtrace_blocks_done daikon_dtrace_blocks iotype_input iotype_output;
     opt_time = 1;
-    opt_namereal = 1;
+    opt_namereal = 1; % try using real variable names instead of automatically generated ones
     opt_time_major_only = 1; % on = faster, only checks at major time steps, see the simulation loop steps, e.g.: http://www.mathworks.com/help/simulink/sfg/how-s-functions-work.html
     opt_dataflow = 1; % 1 = dataflow on (program points in hierarchy), 0 = dataflow off (just assume all program points are unit traces)
     
