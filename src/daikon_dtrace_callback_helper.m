@@ -93,7 +93,16 @@ function [out] = daikon_dtrace_callback_helper(block, eventData, opt_multi)
         % iterate over input variables and setup for logging
         for i = 1 : block.NumInputPorts
             simData(Nvars + 1).val = block.InputPort(i).Data;
-            inportName = strtrim(char(get_param(ports.Inport(i),'Name')));
+            %i
+            %ports
+            %ports.Inport
+            %block.NumInputPorts
+            if length(ports.Inport) > 0
+                inportName = strtrim(char(get_param(ports.Inport(i),'Name')));
+            else
+                inportName = '';
+            end
+            
             if opt_namereal && length(inportName  > 0 )
                 %simData(Nvars + 1).varname = block.InputPort(i).Name;
                 simData(Nvars + 1).varname = inportName;

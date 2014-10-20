@@ -3,6 +3,14 @@
 %
 % model_filename: name of an example in ../example/
 % opt_process_traces: 0 = do not call trace analyzer automatically, 1 = call trace analyzer automatically
+% opt_inst_mode: 0 = default whitelist mode, only instrument subsystem blocks and
+% function blocks, 1 = default blacklist mode, instrument all blocks except
+% certain restricted classes (see blacklist file), 2 = instrument all
+% blocks
+%
+% INSTRUMENTATION NOTES: 
+% (1) in all modes, commented out and commented through blocks are NOT instrumented
+% (2) in all modes, blocks with no input and no output ports are NOT instrumented (as they have no visible effect in terms of program points or pre/post conditions)
 %
 % example calls:
 % 1)
@@ -26,7 +34,7 @@
 % 
 % %model_filename = 'slexAircraftPitchControlExample';
 %
-function [time_simulate, time_siminst, time_daikon] = hynger(model_filename, opt_process_traces)
+function [time_simulate, time_siminst, time_daikon, models_all_count, models_inst_count] = hynger(model_filename, opt_process_traces, opt_inst_mode)
     tic; % start runtime measurements
 
     javaaddpath(['.', filesep, '..', filesep, 'lib', filesep, 'daikon.jar']);
@@ -40,8 +48,15 @@ function [time_simulate, time_siminst, time_daikon] = hynger(model_filename, opt
 
     daikon_dtrace_open = 0;
     
+    try
+        if isempty(opt_inst_mode)
+            opt_inst_mode = 0;
+        end
+    catch
+        opt_inst_mode = 0;
+    end
+    
     opt_benchmark = 1; % enable benchmarking mode to compare simulation times with and without instrumentation
-    opt_blacklist = 0; % blacklist = 1 means ignore only some block types, blacklist = 0 means whitelist mode and add only some block types
     opt_dataflow = 1; % 
     opt_time = 1; % 1 = include time variable, 0 = do not
     opt_multi = 0; % 1 = create multiple Daikon trace files, 0 = create a single large trace file over the entire simulation
@@ -112,7 +127,7 @@ function [time_simulate, time_siminst, time_daikon] = hynger(model_filename, opt
 
         % ignore blacklist blocks or only add whitelisted blocks
         try
-            if (opt_blacklist && ~block_ignore_instrumentation(model_block)) || (~opt_blacklist && block_whitelist_instrumentation(model_block))        
+            if (opt_inst_mode == 2) || (opt_inst_mode == 1 && ~block_blacklist_instrumentation(model_block)) || (opt_inst_mode == 0 && block_whitelist_instrumentation(model_block))        
                     input_names = get_param(model_block, 'InputSignalNames');
                     output_names = get_param(model_block, 'OutputSignalNames');
 
@@ -129,13 +144,20 @@ function [time_simulate, time_siminst, time_daikon] = hynger(model_filename, opt
         
     end
     
-    ['Block count in diagram: ', num2str(length(models_all))]
+    models_all_count = length(models_all) - 1; % the root diagram is included here, but it has no i/o's, so don't count it here
+    models_inst_count = length(models_block);
+    ['Block count in diagram: ', num2str(models_all_count)]
     models_all
-    ['Blocks instrumented in diagram: ', num2str(length(models_block))]
+    ['Blocks instrumented in diagram: ', num2str(models_inst_count)]
     models_block
-    ['Percentage blocks instrumented: ', num2str(length(models_block)) / length(models_all)]
+    ['Percentage blocks instrumented: ', num2str(models_inst_count / models_all_count)]
+    
+    if models_inst_count <= 0
+        ['Warning: quitting Hynger, no blocks set up for instrumentation, this is probably a mistake or error.']
+        return;
+    end
 
-    daikon_dtrace_blocks = length(models_block);
+    daikon_dtrace_blocks = models_inst_count;
 
     % get all variables for a given block
     base_vars = Simulink.findVars(model_filename, 'WorkspaceType','base');
@@ -159,13 +181,11 @@ function [time_simulate, time_siminst, time_daikon] = hynger(model_filename, opt
     end
 
     % start simulation and pause (so we can use runtime listeners)
-
-    blk_root = model_filename;
-
+    set_param(bdroot,'SimulationCommand','stop');
     set_param(bdroot,'SimulationCommand','start');
     set_param(bdroot,'SimulationCommand','pause');
 
-    while ~strcmp(get_param(bdroot,'SimulationStatus'), 'paused')
+    while ~strcmpi(get_param(bdroot,'SimulationStatus'), 'paused')
         pause(0.01);
     end
 
@@ -173,6 +193,11 @@ function [time_simulate, time_siminst, time_daikon] = hynger(model_filename, opt
         output_filename = ['output_', model_filename, '.dtrace'];
         who
         daikon_dtrace_startup(output_filename);
+    end
+    
+    if ~strcmpi(get_param(bdroot,'SimulationStatus'), 'paused')
+        'ERROR: simulation failed to start up, terminating'
+        return;
     end
 
     %rto = get_param(gcb,'RuntimeObject');
@@ -201,13 +226,13 @@ function [time_simulate, time_siminst, time_daikon] = hynger(model_filename, opt
             try
                 h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs);
             catch ex
-                'error: adding pre handler'
+                ['error: adding pre handler to block: ', blk]
                 ex
             end
             try
                 h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
             catch ex
-                'error: adding post handler'
+                ['error: adding post handler to block: ', blk]
                 ex
             end
         end
