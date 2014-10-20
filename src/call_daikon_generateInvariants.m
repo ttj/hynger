@@ -1,7 +1,7 @@
 % call Daikon on output trace file
 %
 % TODO: add trace and config file paths as input
-function call_daikon_generateInvariants()
+function call_daikon_generateInvariants(output_filepath, model_filename)
     javaaddpath(['.', filesep, '..', filesep, 'lib', filesep, 'daikon.jar']);
     import  daikon.Runtime.dtrace.*;
     import daikon.*;
@@ -10,6 +10,8 @@ function call_daikon_generateInvariants()
     %import daikon.inv.filter.*;
     import daikon.derive.*;
     import daikon.derive.binary.*;
+    
+    ['call_daikon_generateInvariants(''',output_filepath,''', ', model_filename, ''')']
     
     opt_redirect_output = 1;
     
@@ -21,14 +23,38 @@ function call_daikon_generateInvariants()
         % see: http://www.mathworks.com/help/matlab/ref/javaobject.html
         %
         % based on idea: http://stackoverflow.com/questions/18669245/how-can-i-pipe-the-java-console-output-to-file-without-java-web-start
-        fileOutStream = javaObject('java.io.FileOutputStream', '../daikon-output/output_test.inv'); % TODO: clean up file names
+        % output file path for Daikon formatted invariants
+        inv_filepath_daikon_format = ['../daikon-output/', model_filename, '.inv']; % TODO: clean up file names
+        
+        fileOutStream = javaObject('java.io.FileOutputStream', inv_filepath_daikon_format);
         printStream = javaObject('java.io.PrintStream', fileOutStream);
         java.lang.System.setOut(printStream);
     end
     
-    dtrace_filepath = ['..', filesep, 'daikon-output', filesep 'output.dtrace'];
+    %dtrace_filepath = output_filepath;
+    dtrace_filepath = ['..', filesep, 'daikon-output', filesep 'output_', model_filename, '.dtrace'];
+    
+    % path to daikon configuration options
     %config_filepath = ['..', filesep, 'src', filesep, 'daikon_settings.txt'];
-    config_filepath = ['..', filesep, 'example', filesep, 'buck_hvoltage_discrete_daikon_config.cfg'];
+    %config_filepath = ['..', filesep, 'example', filesep, 'buck_hvoltage_discrete_daikon_config.cfg'];
+    config_filepath = ['..', filesep, 'example', filesep, model_filename, '_daikon_config.cfg'];
+    
+    % error handling: calling Daikon without valid files can crash Matlab
+    if ~exist(dtrace_filepath, 'file')
+        ['Error calling Daikon: dtrace file not found: ', dtrace_filepath]
+        return;
+    else
+        args = {dtrace_filepath, '--config', config_filepath};
+    end
+    
+    % non-fatal error if config file doesn't exist
+    if ~exist(config_filepath, 'file')
+        ['Error calling Daikon: config file not found: ', config_filepath]
+        ['Warning: proceeding and calling Daikon with default invariant settings since configuration file not found: ', config_filepath]
+        args = {dtrace_filepath};
+        %%return; % non-fatal, don't quit
+    end
+    
     
     %daikon.Daikon.main(dtrace_filepath); % TODO: clean up input dtrace file name
     % equivalent call:
@@ -49,7 +75,6 @@ function call_daikon_generateInvariants()
         %javaMethod('main', 'daikon.Daikon', daikon_args.toArray());
         % args = {dtrace_filepath, ['--config ', config_filepath]}; % doesn't work: doesn't let the --config and config path be split...
         
-        args = {dtrace_filepath, '--config', config_filepath}; % works
         javaMethod('main', 'daikon.Daikon', args);
         
         % NOTE: be careful calling daikon with bad arguments: it seems that
@@ -58,6 +83,9 @@ function call_daikon_generateInvariants()
         %
         % TODO: to help avoid killing this, we should make sure the dtrace
         % and config files exist before trying to call Daikon
+        %
+        % NOTE: the try/catch will not prevent Matlab from crashing when
+        % calling Daikon externally if it has an error
     catch ex
         'error calling Daikon'
         ex

@@ -6,9 +6,14 @@
 function [out] = daikon_dtrace_startup(output_trace_filename)
     global daikon_dtrace_open daikon_dtrace_blocks_done_all daikon_dtrace_blocks_done daikon_dtrace_blocks;
     
+    % WARNING: cannot insert the next, it will clear global variables (side effect!)
+    %javaaddpath(['.', filesep, '..', filesep, 'lib', filesep, 'daikon.jar']);
+    %import  daikon.Runtime.dtrace.*;
+    
     % mutex-type object to see if a trace file is already created or not
     % (multiple blocks, each with their own callback)
     if ~daikon_dtrace_open && ~daikon.Runtime.no_dtrace
+    %if ~daikon.Runtime.no_dtrace
         output_dir = ['..', filesep, 'daikon-output', filesep];
         output_filepath = [output_dir, output_trace_filename];
 

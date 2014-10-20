@@ -66,11 +66,11 @@ function [out] = daikon_dtrace_callback_helper(block, eventData, opt_multi)
             %block.OutputPort(i).Name
             %block.OutputPort(i)
             %get_param(block.OutputPort(i),'DialogParameters')
-            if opt_namereal && length( outports_names(i) ) > 0
+            if opt_namereal && length( strtrim(outports_names(i)) ) > 0
                 %length( get_param(ports.Outport(i),'Name') > 0 )
                 %simData(i).varname = block.OutputPort(i).Name; % doesn't work
                 %simData(i).varname = get_param(ports.Outport(i),'Name');
-                simData(i).varname = char( outports_names(i) );
+                simData(i).varname = strtrim(char( outports_names(i) ));
             else
                 simData(i).varname = ['x_out', num2str(i)];
             end
@@ -85,9 +85,10 @@ function [out] = daikon_dtrace_callback_helper(block, eventData, opt_multi)
         % iterate over input variables and setup for logging
         for i = 1 : block.NumInputPorts
             simData(Nvars + 1).val = block.InputPort(i).Data;
-            if opt_namereal && length( get_param(ports.Inport(i),'Name') > 0 )
+            inportName = strtrim(char(get_param(ports.Inport(i),'Name')));
+            if opt_namereal && length(inportName  > 0 )
                 %simData(Nvars + 1).varname = block.InputPort(i).Name;
-                simData(Nvars + 1).varname = get_param(ports.Inport(i),'Name');
+                simData(Nvars + 1).varname = inportName;
             else
                 simData(Nvars + 1).varname = ['x_in', num2str(i)];
             end

@@ -1,0 +1,124 @@
+Daikon version 5.1.8, released September 30, 2014; http://plse.cs.washington.edu/daikon.
+Reading declaration files [10:22:54 PM]:                                                                                                                                                                                                                               Processing trace data; reading 1 dtrace file:
+[10:22:54 PM]: Finished reading ..\daikon-output\output_arch2014jin_AbstractFue
+                                                                               ===========================================================================
+..AF_Controller:::ENTER
+::x_in1 == 314.1593
+::time < ::x_in1
+::time < ::x_in2
+::time < ::x_in3
+:: < ::x_in1
+:: < ::x_in2
+:: < ::x_in3
+::x_in1 > ::x_in2
+::x_in1 > ::x_in3
+::x_in2 < ::x_in3
+===========================================================================
+..AF_Controller:::EXIT
+::time == orig(::time)
+::x_in1 == orig(::x_in1)
+::x_in2 == orig(::x_in2)
+::x_in3 == orig(::x_in3)
+::x_in1 == 314.1593
+::time < ::x_in1
+::time < ::x_in2
+::time < ::x_in3
+:: < ::x_in1
+:: < ::x_in2
+:: < ::x_in3
+::x_in1 > ::x_in2
+::x_in1 > ::x_in3
+::x_in1 > orig(::)
+::x_in2 < ::x_in3
+::x_in2 > orig(::)
+::x_in3 > orig(::)
+===========================================================================
+..air_estimation:::ENTER
+::x_in2 == 314.1593
+::time != ::
+::time < ::x_in1
+::time < ::x_in2
+:: < ::x_in2
+::x_in1 < ::x_in2
+===========================================================================
+..air_estimation:::EXIT
+::time == orig(::time)
+::x_in1 == orig(::x_in1)
+::x_in2 == orig(::x_in2)
+::x_in2 == 314.1593
+::time < ::
+::time < ::x_in1
+::time < ::x_in2
+::time != orig(::)
+:: >= ::x_in1
+:: < ::x_in2
+::x_in1 < ::x_in2
+::x_in2 > orig(::)
+===========================================================================
+..feedback_PI_controller:::ENTER
+::x_in1 == 14.7
+::time != ::
+::time < ::x_in1
+::time < ::x_in2
+:: < ::x_in1
+:: < ::x_in2
+===========================================================================
+..feedback_PI_controller:::EXIT
+::time == orig(::time)
+::x_in1 == orig(::x_in1)
+::x_in2 == orig(::x_in2)
+::x_in1 == 14.7
+::time != ::
+::time < ::x_in1
+::time < ::x_in2
+::time != orig(::)
+:: < ::x_in1
+:: < ::x_in2
+::x_in1 > orig(::)
+::x_in2 > orig(::)
+===========================================================================
+..feedforward_controller_aquino:::ENTER
+::x_in2 == 314.1593
+::x_in3 == 14.7
+::time != ::fi
+::time < ::x_in1
+::time < ::x_in2
+::time < ::x_in3
+::time != ::x_in4
+::fi < ::x_in1
+::fi < ::x_in2
+::fi < ::x_in3
+::x_in1 < ::x_in2
+::x_in1 != ::x_in3
+::x_in1 > ::x_in4
+::x_in2 > ::x_in4
+::x_in3 > ::x_in4
+===========================================================================
+..feedforward_controller_aquino:::EXIT
+::time == orig(::time)
+::x_in1 == orig(::x_in1)
+::x_in2 == orig(::x_in2)
+::x_in3 == orig(::x_in3)
+::x_in4 == orig(::x_in4)
+::x_in2 == 314.1593
+::x_in3 == 14.7
+::time != ::fi
+::time < ::x_in1
+::time < ::x_in2
+::time < ::x_in3
+::time != ::x_in4
+::time != orig(::fi)
+::fi < ::x_in1
+::fi < ::x_in2
+::fi < ::x_in3
+::fi != ::x_in4
+::x_in1 < ::x_in2
+::x_in1 != ::x_in3
+::x_in1 > ::x_in4
+::x_in1 > orig(::fi)
+::x_in2 > ::x_in4
+::x_in2 > orig(::fi)
+::x_in3 > ::x_in4
+::x_in3 > orig(::fi)
+Exiting Daikon.
+                                                                               
