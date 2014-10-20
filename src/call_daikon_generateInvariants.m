@@ -1,7 +1,11 @@
 % call Daikon on output trace file
 %
 % TODO: add trace and config file paths as input
-function call_daikon_generateInvariants(output_filepath, model_filename)
+function [time_daikon] = call_daikon_generateInvariants(output_filepath, model_filename)
+    tic;
+    time_daikon_start = toc; % check if tic necessary (should be called already)
+    
+
     javaaddpath(['.', filesep, '..', filesep, 'lib', filesep, 'daikon.jar']);
     import  daikon.Runtime.dtrace.*;
     import daikon.*;
@@ -10,8 +14,8 @@ function call_daikon_generateInvariants(output_filepath, model_filename)
     %import daikon.inv.filter.*;
     import daikon.derive.*;
     import daikon.derive.binary.*;
-    
-    ['call_daikon_generateInvariants(''',output_filepath,''', ', model_filename, ''')']
+
+    opt_display_invariants = 0;
     
     opt_redirect_output = 1;
     
@@ -91,5 +95,12 @@ function call_daikon_generateInvariants(output_filepath, model_filename)
         ex
     end
     
-    %daikon.Daikon.main --config_option daikon.PrintInvariants.print_all=true --config_option daikon.derive.binary.SequenceFloatIntersection.enabled=true --config_option daikon.derive.binary.SequenceFloatSubscript.enabled=true --config_option daikon.derive.binary.SequenceFloatSubsequence.enabled=true --config_option daikon.derive.binary.SequenceFloatUnion.enabled=true --config_option daikon.PptTopLevel.pairwise_implications=true --config_option daikon.derive.binary.SequenceScalarIntersection.enabled=true --config_option daikon.derive.binary.SequencesConcat.enabled=true --config_option daikon.derive.binary.SequencesJoin.enabled=true --config_option daikon.derive.binary.SequencesJoinFloat.enabled=true --config_option daikon.derive.binary.SequencesPredicate.enabled=true --config_option daikon.derive.binary.SequencesPredicateFloat.enabled=true --config_option daikon.derive.ternary.SequenceFloatArbitrarySubsequence.enabled=true --config_option daikon.derive.ternary.SequenceScalarArbitrarySubsequence.enabled=true --config_option daikon.derive.ternary.SequenceStringArbitrarySubsequence.enabled=true --config_option daikon.derive.unary.SequenceInitial.enabled=true --config_option daikon.derive.unary.SequenceInitialFloat.enabled=true --config_option daikon.derive.unary.SequenceMax.enabled=true --config_option daikon.derive.unary.SequenceMin.enabled=true --config_option daikon.derive.unary.SequenceSum.enabled=true --config_option daikon.inv.unary.sequence.CommonFloatSequence.enabled=true --config_option daikon.derive.binary.SequencesPredicateFloat.enabled=true --config_option daikon.derive.ternary.SequenceFloatArbitrarySubsequence.enabled=true --config_option daikon.derive.ternary.SequenceScalarArbitrarySubsequence.enabled=true --config_option daikon.derive.unary.SequenceInitialFloat.enabled=true --config_option daikon.derive.unary.SequenceMax.enabled=true --config_option daikon.derive.unary.SequenceMin.enabled=true ../daikon-output/output.dtrace
+    time_daikon_done = toc;
+    time_daikon = time_daikon_done - time_daikon_start;
+    ['Daikon finished processing in: ', num2str(time_daikon)]
+    ['Daikon invariant output available at: ', inv_filepath_daikon_format]
+    % display invariants
+    if opt_display_invariants
+        type(inv_filepath_daikon_format)
+    end
 end

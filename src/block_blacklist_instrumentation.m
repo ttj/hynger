@@ -16,6 +16,9 @@ function [out] = block_blacklist_instrumentation(blk)
     
     blk_type = get_param(blk, 'BlockType');
     
+    % TODO: convert all these ORs to a loop, provide a cellstr array of
+    % blacklisted blocks, and iterate through doing comparisons
+    
     if (strcmpi(blk_type, 'Constant') || strcmpi(blk_type, 'Scope') || strcmpi(blk_type, 'Goto') )
         out = 1;
         return;

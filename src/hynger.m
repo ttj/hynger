@@ -26,7 +26,9 @@
 % 
 % %model_filename = 'slexAircraftPitchControlExample';
 %
-function [out] = hynger(model_filename, opt_process_traces)
+function [time_simulate, time_siminst, time_daikon] = hynger(model_filename, opt_process_traces)
+    tic; % start runtime measurements
+
     javaaddpath(['.', filesep, '..', filesep, 'lib', filesep, 'daikon.jar']);
     import  daikon.Runtime.dtrace.*;
     %import daikon.Daikon;
@@ -38,8 +40,8 @@ function [out] = hynger(model_filename, opt_process_traces)
 
     daikon_dtrace_open = 0;
     
+    opt_benchmark = 1; % enable benchmarking mode to compare simulation times with and without instrumentation
     opt_blacklist = 0; % blacklist = 1 means ignore only some block types, blacklist = 0 means whitelist mode and add only some block types
-
     opt_dataflow = 1; % 
     opt_time = 1; % 1 = include time variable, 0 = do not
     opt_multi = 0; % 1 = create multiple Daikon trace files, 0 = create a single large trace file over the entire simulation
@@ -59,13 +61,36 @@ function [out] = hynger(model_filename, opt_process_traces)
     %model_filepath = ['..', filesep, 'example', filesep, 'staliro', filesep, model_filename];
     
     try
-        % stop simulation in case started
+        % stop simulation in case started from previous run or by user (avoids error)
         set_param(bdroot,'SimulationCommand','stop');
         close_system(model_filepath);
     catch
     end
     
     open_system(model_filepath);
+    
+    % simulate diagram without instrumentation and record time
+    if opt_benchmark
+        time_simulate_start = toc;
+        while ~strcmp(get_param(bdroot,'SimulationStatus'), 'stopped')
+            pause(0.01);
+        end
+
+        set_param(bdroot,'SimulationCommand','start');
+
+        % wait here until simulation done
+        % TODO: convert this wait into an appropriate event handelr function that
+        % gets called when the simulation stops to shut things down
+        % TODO: but this shutdown will need to know extra information, such as
+        % daikon tracing is on, etc. (e.g., check the bit like
+        % daikon.Runtime.no_dtrace is false, which implies there is a dtrace open)
+        while ~strcmp(get_param(bdroot,'SimulationStatus'), 'stopped')
+            pause(0.01);
+        end
+        time_simulate_stop = toc;
+        time_simulate = time_simulate_stop - time_simulate_start;
+        ['Simulation time without instrumentation: ', num2str(time_simulate)]
+    end
 
     % ways to find all variables defined in a simulink object (so we can
     % instrument the simulink diagram automatically using appropriate event /
@@ -76,12 +101,8 @@ function [out] = hynger(model_filename, opt_process_traces)
 
     count = 0;
     
-
-    % TODO: find all blocks in parent chart
-    %models_block = {'DC-to-DC Converter', 'Sensor', 'Controller'};
     models_block = {};
 
-    % TODO: open the model file
     models_all = find_system(model_filename); % note: model must be opened
    
     % filter out constants, etc., or maybe just blocks that have only output or
@@ -89,20 +110,30 @@ function [out] = hynger(model_filename, opt_process_traces)
     for i_model = 1 : length(models_all)
         model_block = char(models_all(i_model));
 
+        % ignore blacklist blocks or only add whitelisted blocks
         try
-            input_names = get_param(model_block, 'InputSignalNames');
-            output_names = get_param(model_block, 'OutputSignalNames');
+            if (opt_blacklist && ~block_ignore_instrumentation(model_block)) || (~opt_blacklist && block_whitelist_instrumentation(model_block))        
+                    input_names = get_param(model_block, 'InputSignalNames');
+                    output_names = get_param(model_block, 'OutputSignalNames');
 
-            % output
-            if length(output_names) > 0
-            % input and output
-            %if length(input_names) > 0 && length(output_names) > 0
-                %models_block = cat(1,models_block,cellstr(model_block));
-                models_block = cat(1,models_block,model_block);
+                    % output
+                    if length(output_names) > 0 || length(input_names) > 0
+                    % input and output
+                    %if length(input_names) > 0 && length(output_names) > 0
+                        %models_block = cat(1,models_block,cellstr(model_block));
+                        models_block = cat(1,models_block,model_block);
+                    end
             end
         catch
         end
+        
     end
+    
+    ['Block count in diagram: ', num2str(length(models_all))]
+    models_all
+    ['Blocks instrumented in diagram: ', num2str(length(models_block))]
+    models_block
+    ['Percentage blocks instrumented: ', num2str(length(models_block)) / length(models_all)]
 
     daikon_dtrace_blocks = length(models_block);
 
@@ -152,36 +183,32 @@ function [out] = hynger(model_filename, opt_process_traces)
         %blk = [blk_root, '/', char(model_block)];
 
         blk = model_block;
-        % ignore blacklist blocks
-        % or only add whitelisted blocks
-        if (opt_blacklist && ~block_ignore_instrumentation(blk)) || (~opt_blacklist && block_whitelist_instrumentation(blk))
             % add callback to log data during execution (potentially at every
             % simulation time step)
             % see: http://www.mathworks.com/help/simulink/slref/add_exec_event_listener.html
-            if opt_multi
-                % NOTE: this must be assigned to unique objects, otherwise the
-                % callback will not be set properly (e.g., it may always be the
-                % last block set instead of all blocks)
-                h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs_multi);
-                h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
-                %h(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
-                %h(i_model) = add_exec_event_listener(blk, 'PostUpdate',
-                %@daikon_dtrace_callback_postoutputs_multi); % doesn't work, post
-                %is very infrequent
-            else
-                blk = char(blk); % requires char at this point...
-                try
-                    h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs);
-                catch ex
-                    'error: adding pre handler'
-                    ex
-                end
-                try
-                    h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
-                catch ex
-                    'error: adding post handler'
-                    ex
-                end
+        if opt_multi
+            % NOTE: this must be assigned to unique objects, otherwise the
+            % callback will not be set properly (e.g., it may always be the
+            % last block set instead of all blocks)
+            h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs_multi);
+            h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
+            %h(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs_multi);
+            %h(i_model) = add_exec_event_listener(blk, 'PostUpdate',
+            %@daikon_dtrace_callback_postoutputs_multi); % doesn't work, post
+            %is very infrequent
+        else
+            blk = char(blk); % requires char at this point...
+            try
+                h_pre(i_model) = add_exec_event_listener(blk, 'PreOutputs', @daikon_dtrace_callback_postoutputs);
+            catch ex
+                'error: adding pre handler'
+                ex
+            end
+            try
+                h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
+            catch ex
+                'error: adding post handler'
+                ex
             end
         end
     end
@@ -191,6 +218,8 @@ function [out] = hynger(model_filename, opt_process_traces)
     % source: http://www.mathworks.com/help/simulink/slref/add_exec_event_listener.html
 
     %rto.OutputPort(1).Data
+    
+    time_siminst_start = toc;
 
     % source: http://www.mathworks.com/help/simulink/ug/using-the-set-param-command.html
     % poll and wait for simulation to start (will have status of initializing
@@ -200,7 +229,7 @@ function [out] = hynger(model_filename, opt_process_traces)
     end
 
     %set_param(bdroot,'SimulationCommand','start');
-    get_param(bdroot,'SimulationStatus')
+    get_param(bdroot,'SimulationStatus');
     set_param(bdroot,'SimulationCommand','continue');
     %set_param(bdroot,'SimulationCommand','stop');
 
@@ -221,8 +250,18 @@ function [out] = hynger(model_filename, opt_process_traces)
         daikon_dtrace_shutdown();
     end
     
+    time_siminst_stop = toc;
+    time_siminst = time_siminst_stop - time_siminst_start;
+    
+    ['Simulation time with instrumentation: ', num2str(time_siminst)]
+    if opt_benchmark
+        ['Simulation time overhead from instrumentation: ', num2str(time_siminst / time_simulate)]
+    end
+    
+    ['Daikon call command: call_daikon_generateInvariants(''',output_filename,''', ''', model_filename, ''')']
+    
     % process generated traces
     if opt_process_traces
-        call_daikon_generateInvariants(output_filename, model_filename);
+        time_daikon = call_daikon_generateInvariants(output_filename, model_filename);
     end
 end
