@@ -1,124 +1,399 @@
-Daikon version 5.1.8, released September 30, 2014; http://plse.cs.washington.edu/daikon.
-Reading declaration files [10:22:54 PM]:                                                                                                                                                                                                                               Processing trace data; reading 1 dtrace file:
-[10:22:54 PM]: Finished reading ..\daikon-output\output_arch2014jin_AbstractFue
+[11:13:11 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (lDaikon version 5.1.8, released September 30, 2014; http://plse.cs.washington.edu/daikon.
+Reading declaration files [11:13:11 PM]:                                                                                                                                                                                                                               Processing trace data; reading 1 dtrace file:
+[11:13:12 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:12 PM]: Reading ..\daikon-output\output_arch2014jin_AbstractFuelControl_[11:13:12 PM]: Finished reading ..\daikon-output\output_arch2014jin_AbstractFue
                                                                                ===========================================================================
 ..AF_Controller:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
+::x_in2 == ::x_in2
+::x_in3 == ::x_in3
+::time != 0
+::time <= 50.0
+::time >= 0
+::time >= 1.3848E-4
+::x_out1 != 0
+::x_out1 <= 3.2439
+::x_out1 >= 0
+::x_out1 >= 0.1726
 ::x_in1 == 314.1593
+::x_in1 != 0
+::x_in1 <= 314.1593
+::x_in1 >= 0
+::x_in1 >= 314.1593
+::x_in1 >= 64
+::x_in2 != 0
+::x_in2 <= 75.0286
+::x_in2 >= 0
+::x_in2 >= 8.3407
+::x_in3 != 0
+::x_in3 <= 20.0372
+::x_in3 >= 0
+::x_in3 >= 12.6509
+::time - ::time == 0
 ::time < ::x_in1
-::time < ::x_in2
-::time < ::x_in3
-:: < ::x_in1
-:: < ::x_in2
-:: < ::x_in3
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::x_in1
+::x_out1 < ::x_in2
+::x_out1 < ::x_in3
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in1+ 0 * ::x_in1 + 0 == 0
 ::x_in1 > ::x_in2
 ::x_in1 > ::x_in3
-::x_in2 < ::x_in3
+::x_in2 - ::x_in2 == 0
+::x_in3 - ::x_in3 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in3, ::x_in3)
 ===========================================================================
 ..AF_Controller:::EXIT
+::time == ::time
 ::time == orig(::time)
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
 ::x_in1 == orig(::x_in1)
+::x_in2 == ::x_in2
 ::x_in2 == orig(::x_in2)
+::x_in3 == ::x_in3
 ::x_in3 == orig(::x_in3)
+orig(::x_out1) == orig(::x_out1)
+::time != 0
+::time <= 50.0
+::time >= 0
+::time >= 1.3848E-4
+::x_out1 != 0
+::x_out1 <= 3.2439
+::x_out1 >= 0
+::x_out1 >= 0.1726
 ::x_in1 == 314.1593
+::x_in1 != 0
+::x_in1 <= 314.1593
+::x_in1 >= 0
+::x_in1 >= 314.1593
+::x_in1 >= 64
+::x_in2 != 0
+::x_in2 <= 75.0286
+::x_in2 >= 0
+::x_in2 >= 8.3407
+::x_in3 != 0
+::x_in3 <= 20.0372
+::x_in3 >= 0
+::x_in3 >= 12.6509
+orig(::x_out1) != 0
+orig(::x_out1) <= 3.2439
+orig(::x_out1) >= 0
+orig(::x_out1) >= 0.1726
+::time - ::time == 0
 ::time < ::x_in1
-::time < ::x_in2
-::time < ::x_in3
-:: < ::x_in1
-:: < ::x_in2
-:: < ::x_in3
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::x_in1
+::x_out1 < ::x_in2
+::x_out1 < ::x_in3
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in1+ 0 * ::x_in1 + 0 == 0
 ::x_in1 > ::x_in2
 ::x_in1 > ::x_in3
-::x_in1 > orig(::)
-::x_in2 < ::x_in3
-::x_in2 > orig(::)
-::x_in3 > orig(::)
+::x_in1 > orig(::x_out1)
+::x_in2 - ::x_in2 == 0
+::x_in2 > orig(::x_out1)
+::x_in3 - ::x_in3 == 0
+::x_in3 > orig(::x_out1)
+orig(::x_out1) - orig(::x_out1) == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in3, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, orig(::x_out1), orig(::x_out1))
 ===========================================================================
 ..air_estimation:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
+::x_in2 == ::x_in2
+::time != 0
+::time <= 50.0
+::time >= 0
+::time >= 0.01
+::x_out1 <= 26.4307
+::x_out1 >= 0
+::x_out1 >= 0.0
+::x_in1 != 0
+::x_in1 <= 72.1611
+::x_in1 >= 0
+::x_in1 >= 8.8603
 ::x_in2 == 314.1593
-::time != ::
-::time < ::x_in1
+::x_in2 != 0
+::x_in2 <= 314.1593
+::x_in2 >= 0
+::x_in2 >= 314.1593
+::x_in2 >= 64
+::time - ::time == 0
 ::time < ::x_in2
-:: < ::x_in2
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::x_in2
+::x_in1 - ::x_in1 == 0
 ::x_in1 < ::x_in2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in2 + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in2)
 ===========================================================================
 ..air_estimation:::EXIT
+::time == ::time
 ::time == orig(::time)
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
 ::x_in1 == orig(::x_in1)
+::x_in2 == ::x_in2
 ::x_in2 == orig(::x_in2)
+orig(::x_out1) == orig(::x_out1)
+::time != 0
+::time <= 50.0
+::time >= 0
+::time >= 0.01
+::x_out1 != 0
+::x_out1 <= 26.4307
+::x_out1 >= 0
+::x_out1 >= 9.9069
+::x_in1 != 0
+::x_in1 <= 72.1611
+::x_in1 >= 0
+::x_in1 >= 8.8603
 ::x_in2 == 314.1593
-::time < ::
-::time < ::x_in1
+::x_in2 != 0
+::x_in2 <= 314.1593
+::x_in2 >= 0
+::x_in2 >= 314.1593
+::x_in2 >= 64
+orig(::x_out1) <= 26.4307
+orig(::x_out1) >= 0
+orig(::x_out1) >= 0.0
+::time - ::time == 0
 ::time < ::x_in2
-::time != orig(::)
-:: >= ::x_in1
-:: < ::x_in2
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::x_in2
+::x_in1 - ::x_in1 == 0
 ::x_in1 < ::x_in2
-::x_in2 > orig(::)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in2 + 0 == 0
+::x_in2 > orig(::x_out1)
+orig(::x_out1) - orig(::x_out1) == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, orig(::x_out1), orig(::x_out1))
 ===========================================================================
 ..feedback_PI_controller:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
+::x_in2 == ::x_in2
+::time != 0
+::time <= 50.0
+::time >= 0
+::time >= 0.01
+::x_out1 <= 0.54428
+::x_out1 >= -0.22248
 ::x_in1 == 14.7
-::time != ::
-::time < ::x_in1
-::time < ::x_in2
-:: < ::x_in1
-:: < ::x_in2
+::x_in1 != 0
+::x_in1 <= 14.7
+::x_in1 >= 0
+::x_in1 >= 14.7
+::x_in2 != 0
+::x_in2 <= 19.972
+::x_in2 >= 0
+::x_in2 >= 12.6509
+::time - ::time == 0
+::time != ::x_out1
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::x_in1
+::x_out1 < ::x_in2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in1+ 0 * ::x_in1 + 0 == 0
+::x_in2 - ::x_in2 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in2, ::x_in2)
 ===========================================================================
 ..feedback_PI_controller:::EXIT
+::time == ::time
 ::time == orig(::time)
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
 ::x_in1 == orig(::x_in1)
+::x_in2 == ::x_in2
 ::x_in2 == orig(::x_in2)
+orig(::x_out1) == orig(::x_out1)
+::time != 0
+::time <= 50.0
+::time >= 0
+::time >= 0.01
+::x_out1 <= 0.54428
+::x_out1 >= -0.22248
 ::x_in1 == 14.7
-::time != ::
-::time < ::x_in1
-::time < ::x_in2
-::time != orig(::)
-:: < ::x_in1
-:: < ::x_in2
-::x_in1 > orig(::)
-::x_in2 > orig(::)
+::x_in1 != 0
+::x_in1 <= 14.7
+::x_in1 >= 0
+::x_in1 >= 14.7
+::x_in2 != 0
+::x_in2 <= 19.972
+::x_in2 >= 0
+::x_in2 >= 12.6509
+orig(::x_out1) <= 0.54428
+orig(::x_out1) >= -0.22248
+::time - ::time == 0
+::time != orig(::x_out1)
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::x_in1
+::x_out1 < ::x_in2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in1+ 0 * ::x_in1 + 0 == 0
+::x_in1 > orig(::x_out1)
+::x_in2 - ::x_in2 == 0
+::x_in2 > orig(::x_out1)
+orig(::x_out1) - orig(::x_out1) == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, orig(::x_out1), orig(::x_out1))
 ===========================================================================
 ..feedforward_controller_aquino:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
+::x_in2 == ::x_in2
+::x_in3 == ::x_in3
+::x_in4 == ::x_in4
+::time != 0
+::time <= 50.0
+::time >= 0
+::time >= 0.01
+::x_out1 <= 3.2439
+::x_out1 >= 0
+::x_out1 >= 0.0
+::x_in1 != 0
+::x_in1 <= 26.4307
+::x_in1 >= 0
+::x_in1 >= 9.9069
 ::x_in2 == 314.1593
+::x_in2 != 0
+::x_in2 <= 314.1593
+::x_in2 >= 0
+::x_in2 >= 314.1593
+::x_in2 >= 64
 ::x_in3 == 14.7
-::time != ::fi
-::time < ::x_in1
+::x_in3 != 0
+::x_in3 <= 14.7
+::x_in3 >= 0
+::x_in3 >= 14.7
+::x_in4 <= 3.2439
+::x_in4 >= 0
+::x_in4 >= 0.0
+::time - ::time == 0
 ::time < ::x_in2
-::time < ::x_in3
-::time != ::x_in4
-::fi < ::x_in1
-::fi < ::x_in2
-::fi < ::x_in3
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::x_in1
+::x_out1 < ::x_in2
+::x_out1 < ::x_in3
+::x_in1 - ::x_in1 == 0
 ::x_in1 < ::x_in2
-::x_in1 != ::x_in3
 ::x_in1 > ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in2 + 0 == 0
+::x_in2 > ::x_in3
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in3 + 0 == 0
 ::x_in2 > ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in3+ 0 * ::x_in3 + 0 == 0
 ::x_in3 > ::x_in4
+::x_in4 - ::x_in4 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in3, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in4, ::x_in4, ::x_in4)
 ===========================================================================
 ..feedforward_controller_aquino:::EXIT
+::time == ::time
 ::time == orig(::time)
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
 ::x_in1 == orig(::x_in1)
+::x_in2 == ::x_in2
 ::x_in2 == orig(::x_in2)
+::x_in3 == ::x_in3
 ::x_in3 == orig(::x_in3)
+::x_in4 == ::x_in4
 ::x_in4 == orig(::x_in4)
+orig(::x_out1) == orig(::x_out1)
+::time != 0
+::time <= 50.0
+::time >= 0
+::time >= 0.01
+::x_out1 != 0
+::x_out1 <= 3.2439
+::x_out1 >= 0
+::x_out1 >= 0.55607
+::x_in1 != 0
+::x_in1 <= 26.4307
+::x_in1 >= 0
+::x_in1 >= 9.9069
 ::x_in2 == 314.1593
+::x_in2 != 0
+::x_in2 <= 314.1593
+::x_in2 >= 0
+::x_in2 >= 314.1593
+::x_in2 >= 64
 ::x_in3 == 14.7
-::time != ::fi
-::time < ::x_in1
+::x_in3 != 0
+::x_in3 <= 14.7
+::x_in3 >= 0
+::x_in3 >= 14.7
+::x_in4 <= 3.2439
+::x_in4 >= 0
+::x_in4 >= 0.0
+orig(::x_out1) <= 3.2439
+orig(::x_out1) >= 0
+orig(::x_out1) >= 0.0
+::time - ::time == 0
 ::time < ::x_in2
-::time < ::x_in3
-::time != ::x_in4
-::time != orig(::fi)
-::fi < ::x_in1
-::fi < ::x_in2
-::fi < ::x_in3
-::fi != ::x_in4
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::x_in1
+::x_out1 < ::x_in2
+::x_out1 < ::x_in3
+::x_in1 - ::x_in1 == 0
 ::x_in1 < ::x_in2
-::x_in1 != ::x_in3
 ::x_in1 > ::x_in4
-::x_in1 > orig(::fi)
+::x_in1 > orig(::x_out1)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in2 + 0 == 0
+::x_in2 > ::x_in3
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in3 + 0 == 0
 ::x_in2 > ::x_in4
-::x_in2 > orig(::fi)
+::x_in2 > orig(::x_out1)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in3+ 0 * ::x_in3 + 0 == 0
 ::x_in3 > ::x_in4
-::x_in3 > orig(::fi)
+::x_in3 > orig(::x_out1)
+::x_in4 - ::x_in4 == 0
+orig(::x_out1) - orig(::x_out1) == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in3, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, orig(::x_out1), orig(::x_out1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, orig(::x_out1), orig(::x_out1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in4, ::x_in4, ::x_in4)
 Exiting Daikon.
-                                                                               
+[11:13:13 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l                                                                               [11:13:14 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:15 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:16 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:17 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:18 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:19 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:20 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:21 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:22 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:23 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:24 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:25 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:26 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:27 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:28 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:29 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:30 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:31 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:32 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:33 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:34 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:35 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:36 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:37 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:38 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:39 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:40 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:41 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:42 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:43 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:44 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:45 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:46 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:47 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:48 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:49 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:50 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:51 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:52 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:53 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:54 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:55 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:56 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:57 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:58 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:13:59 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:00 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:01 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:02 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:03 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:04 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:05 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:06 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:07 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:08 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:09 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:10 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:11 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:12 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:13 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:14 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:15 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:16 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:17 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:18 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:19 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:20 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:21 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:22 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:23 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:24 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:25 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:26 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:27 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:28 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:29 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:30 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:31 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:32 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:33 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:34 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:35 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:36 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:37 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:38 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:39 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:40 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:41 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:42 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:43 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:44 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:45 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:46 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:47 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:48 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:49 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:50 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:51 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:52 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:53 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:54 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:55 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:56 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:57 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:58 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:14:59 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:00 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:01 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:02 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:03 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:04 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:05 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:06 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:07 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:08 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:09 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:10 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:11 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:12 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:13 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:14 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:15 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:16 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:17 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:18 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:19 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:20 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:21 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:22 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:23 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:24 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:25 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:26 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:27 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:28 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:29 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:30 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:31 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:32 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:33 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:34 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:35 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:36 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:37 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:38 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:39 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:40 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:41 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:42 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:43 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:44 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:45 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:46 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:47 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:48 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:49 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:50 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:51 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:52 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:53 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:54 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:55 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:56 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:57 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:58 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:15:59 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:00 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:01 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:02 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:03 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:04 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:05 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:06 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:07 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:08 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:09 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:10 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:11 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:12 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:13 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:14 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:15 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:16 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:17 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:18 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:19 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:20 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:21 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:22 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:23 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:24 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:25 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:26 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:27 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:28 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:29 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:30 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:31 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:32 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:33 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:34 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:35 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:36 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:37 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:38 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:39 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:40 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:41 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:42 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:43 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:44 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:45 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:46 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:47 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:48 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:49 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:50 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:51 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:52 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:53 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:54 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:55 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:56 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:57 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:58 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:16:59 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:00 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:01 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:02 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:03 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:04 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:05 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:06 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:07 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:08 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:09 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:10 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:11 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:12 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:13 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:14 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:15 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:16 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:17 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:18 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:19 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:20 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:21 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:22 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:23 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:24 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:25 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:26 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:27 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:28 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:29 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:30 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:31 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:32 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:33 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:34 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:35 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:36 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:37 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:38 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:39 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:40 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:41 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:42 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:43 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:44 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:45 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:46 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:47 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:48 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:49 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:50 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:51 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:52 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:53 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:54 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:55 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:56 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:57 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:58 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:17:59 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:00 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:01 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:02 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:03 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:04 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:05 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:06 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:07 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:08 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:09 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:10 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:11 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:12 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:13 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:14 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:15 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:16 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:17 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:18 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:19 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:20 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:21 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:22 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:23 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:24 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:25 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:26 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:27 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:28 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:29 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:30 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:31 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:32 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:33 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:34 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:35 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:36 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:37 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:38 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:39 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:40 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:41 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:42 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:43 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:44 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:45 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:46 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:47 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:48 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:49 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:50 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:51 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:52 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:53 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:54 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:55 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:56 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:57 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:58 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:18:59 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:00 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:01 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:02 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:03 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:04 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:05 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:06 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:07 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:08 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:09 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:10 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:11 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:12 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:13 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:14 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:15 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:16 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:17 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:18 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:19 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:20 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:21 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:22 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:23 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:24 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:25 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:26 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:27 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:28 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:29 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:30 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:31 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:32 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:33 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:34 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:35 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:36 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:37 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:38 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:39 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:40 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:41 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:42 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:43 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:44 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:45 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:46 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:47 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:48 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:49 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:50 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:51 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:52 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:53 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:54 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:55 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l[11:19:56 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (l
