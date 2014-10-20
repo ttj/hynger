@@ -66,7 +66,9 @@ function [out] = daikon_dtrace_write_trace(model_block_name_daikon, simTime, sim
 %         end
         
         % write decls
+        % TODO: really only want to do this ONCE if writing all traces in same dtrace file (for performance)
         daikon_dtrace_write_decls(model_block_name_daikon, simTime, simData, ppt_name, opt_dataflow, i_ppt, ppt_count, opt_multi, opt_time);
+        
         % write trace data
         daikon_dtrace_write_data(simTime, simData, ppt_name, opt_dataflow, i_ppt, ppt_count, opt_multi, opt_time);
     %end

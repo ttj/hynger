@@ -7,8 +7,8 @@
 % this sets up parameters for simulation, then simulates the models 
 % and generates plots
 
-clc  % clears command window
-clear all; % warning, all results and workspace cleared
+%clc  % clears command window
+%clear all; % warning, all results and workspace cleared
 
 option_sim = 0; % call simulation and plot from this script
 option_extrema = 0; % component variation; only supports buck converter for now

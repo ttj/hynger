@@ -1,5 +1,18 @@
 function [out] = daikon_dtrace_write_decls(model_block_name_daikon, simTime, simData, ppt_name, opt_dataflow, i_ppt, ppt_count, opt_multi, opt_time)
     global daikon_dtrace_open daikon_dtrace_blocks_done_all daikon_dtrace_blocks_done daikon_dtrace_blocks iotype_input iotype_output;
+    persistent done_ppts; % state saved between function calls (like "global", but with scope restricted to this function)
+    
+    % PERFORMANCE: only write declaration once
+    % done_ppts is a cell string array: http://www.mathworks.com/help/matlab/matlab_prog/cell-arrays-of-strings.html
+    if sum(ismember(done_ppts, ppt_name)) > 0
+        return;
+    else
+        % change to cell array from normal array
+        if length(done_ppts) == 0
+            done_ppts = {};
+        end
+        done_ppts(length(done_ppts) + 1) = cellstr(ppt_name);
+    end
     
     Nvars = length(simData);
     
