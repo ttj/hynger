@@ -1,0 +1,24 @@
+# predicates
+
+  speed_bnded := speed[t] < vmax  
+  RPM_bnded := RPM[t] < rpm_max
+
+  gear2 := (abs(gear[t] - 2)-.1) < 0 
+  gear3 := (abs(gear[t] - 3)-.1) < 0 
+
+  gear4w := w*(abs(gear[t] - 4)-.1) < 0
+
+# subformulas
+
+  shift2 := (not gear2) and ev_[0,.02](gear2)
+  shiftn3 := (gear3) and ev_[0,.02](not gear3)
+
+# formulas 
+
+  phi1 := not (ev_[0, 5] (gear4w))
+  phi2 := ev (speed[t]>70)
+  phi3 := alw_[40, inf] (speed[t]<30)
+  phi := phi1 and (not (phi2 and phi3)) 
+
+  
+ 

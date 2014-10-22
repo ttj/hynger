@@ -1,0 +1,14 @@
+# Specification for HVAC 
+# 
+# Parameters:  {'t_morning', 't_evening', 'hot_lim', 'cold_lim'}
+#
+
+night := (t < t_morning) or (t > t_evening)
+day := (t > t_morning) and (t < t_evening)
+
+not_hot := Troom[t]  < hot_lim 
+not_cold := Troom[t] > cold_lim 
+
+Tis_conf := (not_hot) and (not_cold)
+
+phi:= always ( day => Tis_conf )
