@@ -72,8 +72,36 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
         return
     end
     
-    model_filepath = ['..', filesep, 'example', filesep, model_filename];
+    [pathstr,name,ext] = fileparts(model_filename);
+    if length(pathstr) > 0
+        pathstr = [pathstr, filesep];
+    end
+    
+    model_filename = name; % TODO: use filename grabbed from path, overwriting here to reuse existing code
+    
+    % add path separator if extra path necessary (e.g., to ..\examples\array\.)
+    model_filepath = ['..', filesep, 'example', filesep, pathstr, model_filename];
     %model_filepath = ['..', filesep, 'example', filesep, 'staliro', filesep, model_filename];
+    
+    [full_path,name,ext] = fileparts(model_filepath);
+    addpath(full_path);
+    
+    model_filepath_slx = [model_filepath, '.slx'];
+    model_filepath_mdl = [model_filepath, '.mdl'];
+    
+    % TODO: show in debug mode
+    %model_filename
+    %model_filepath
+    
+    % TODO: check existence of model file here and exit if not found
+    if ~exist(model_filepath_slx, 'file') && ~exist(model_filepath_mdl, 'file')
+        ['ERROR: file path bad: ', model_filepath_slx, model_filepath_mdl, ' and filename: ', model_filename]
+        return;
+    end
+    
+    if exist(model_filepath_slx, 'file') && exist(model_filepath_mdl, 'file')
+        ['WARNING: both .mdl and .slx files exist. Continuing.']
+    end
     
     try
         % stop simulation in case started from previous run or by user (avoids error)

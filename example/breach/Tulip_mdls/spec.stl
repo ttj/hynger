@@ -1,0 +1,4 @@
+Vac1_ok := abs(Vac1[t]) > 20 
+Vac1_not_pow := not (ev_[0 eps] (Vac1_ok))
+
+phi := not (alw_[0 3*cycle_dur] (Vac1_not_pow))
