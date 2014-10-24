@@ -1,0 +1,81 @@
+Daikon version 5.1.8, released September 30, 2014; http://plse.cs.washington.edu/daikon.
+Reading declaration files [2:16:35 PM]:                                                                                                                                                                                                                                Processing trace data; reading 1 dtrace file:
+[2:16:36 PM]: Finished reading ..\daikon-output\output_arch2014jin_AbstractFuel
+                                                                               ===========================================================================
+..Fuel_Cmd_Closed:::ENTER
+size(::x_in1[]) == 6
+::time != ::x_out1
+===========================================================================
+..Fuel_Cmd_Closed:::EXIT
+::time == orig(::time)
+::x_out1 == orig(::x_out1)
+::x_in1[] == orig(::x_in1[])
+size(::x_in1[]) == 6
+::time != ::x_out1
+===========================================================================
+..InputPoly:::ENTER
+::time != ::x_out1
+::time != ::x_in1
+::x_out1 > ::x_in1
+===========================================================================
+..InputPoly:::EXIT
+::time == orig(::time)
+::x_out1 == orig(::x_out1)
+::x_in1 == orig(::x_in1)
+::time != ::x_out1
+::time != ::x_in1
+::x_out1 > ::x_in1
+===========================================================================
+..ODE1:::ENTER
+::x_out1 != 0
+size(::x_in1[]) == 7
+::time != ::x_out1
+===========================================================================
+..ODE1:::EXIT
+::time == orig(::time)
+::x_out1 == orig(::x_out1)
+::x_in1[] == orig(::x_in1[])
+::x_out1 != 0
+size(::x_in1[]) == 7
+::time != ::x_out1
+===========================================================================
+..ODE2:::ENTER
+::x_out1 != 0
+size(::x_in1[]) == 7
+::time > ::x_out1
+===========================================================================
+..ODE2:::EXIT
+::time == orig(::time)
+::x_out1 == orig(::x_out1)
+::x_in1[] == orig(::x_in1[])
+::x_out1 != 0
+size(::x_in1[]) == 7
+::time > ::x_out1
+===========================================================================
+..ODE3:::ENTER
+::x_out1 != 0
+size(::x_in1[]) == 7
+::time != ::x_out1
+===========================================================================
+..ODE3:::EXIT
+::time == orig(::time)
+::x_out1 == orig(::x_out1)
+::x_in1[] == orig(::x_in1[])
+::x_out1 != 0
+size(::x_in1[]) == 7
+::time != ::x_out1
+===========================================================================
+..ODE4_Closed:::ENTER
+::x_out1 != 0
+size(::x_in1[]) == 7
+::time > ::x_out1
+===========================================================================
+..ODE4_Closed:::EXIT
+::time == orig(::time)
+::x_out1 == orig(::x_out1)
+::x_in1[] == orig(::x_in1[])
+::x_out1 != 0
+size(::x_in1[]) == 7
+::time > ::x_out1
+Exiting Daikon.
+                                                                               

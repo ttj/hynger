@@ -97,7 +97,7 @@ function [out] = daikon_dtrace_callback_helper(block, eventData, opt_multi)
             %ports
             %ports.Inport
             %block.NumInputPorts
-            if length(ports.Inport) > 0
+            if length(ports.Inport) > 0 && i <= length(ports.Inport)
                 inportName = strtrim(char(get_param(ports.Inport(i),'Name')));
             else
                 inportName = '';
