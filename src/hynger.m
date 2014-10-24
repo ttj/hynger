@@ -84,10 +84,13 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
     %model_filepath = ['..', filesep, 'example', filesep, 'staliro', filesep, model_filename];
     
     [full_path,name,ext] = fileparts(model_filepath);
+    full_path
     addpath(full_path);
     
     model_filepath_slx = [model_filepath, '.slx'];
     model_filepath_mdl = [model_filepath, '.mdl'];
+    
+    model_filepath
     
     % TODO: show in debug mode
     %model_filename
@@ -120,6 +123,10 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
         end
 
         set_param(bdroot,'SimulationCommand','start');
+        
+        %while ~strcmp(get_param(bdroot,'SimulationStatus'), 'running')
+        %    pause(0.01);
+        %end
 
         % wait here until simulation done
         % TODO: convert this wait into an appropriate event handelr function that
@@ -147,6 +154,8 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
     models_block = {};
 
     models_all = find_system(model_filename); % note: model must be opened
+    % TODO: next, should change to interact properly with stateflow sub-charts
+    %models_all = find_system(model_filename, 'FollowLinks', 'on', 'LookUnderMasks', 'all'); % includes ALL blocks underneath
    
     % filter out constants, etc., or maybe just blocks that have only output or
     % input, but not both?
@@ -187,6 +196,12 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
 
     daikon_dtrace_blocks = models_inst_count;
 
+    % ensure stopped
+    while ~strcmp(get_param(bdroot,'SimulationStatus'), 'stopped')
+        set_param(bdroot,'SimulationCommand','stop');
+        pause(0.01);
+    end
+    
     % get all variables for a given block
     base_vars = Simulink.findVars(model_filename, 'WorkspaceType','base');
 
@@ -210,7 +225,17 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
 
     % start simulation and pause (so we can use runtime listeners)
     set_param(bdroot,'SimulationCommand','stop');
+    
+    while ~strcmpi(get_param(bdroot,'SimulationStatus'), 'stopped')
+        pause(0.01);
+    end
+    
     set_param(bdroot,'SimulationCommand','start');
+    
+    while ~strcmpi(get_param(bdroot,'SimulationStatus'), 'running')
+        pause(0.01);
+    end
+    
     set_param(bdroot,'SimulationCommand','pause');
 
     while ~strcmpi(get_param(bdroot,'SimulationStatus'), 'paused')
@@ -230,6 +255,8 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
 
     %rto = get_param(gcb,'RuntimeObject');
 
+    i_err_pre = 0;
+    i_err_post = 0;
     for i_model = 1 : length(models_block)
         model_block = models_block(i_model);
         %model_block = char(models_block(i_model));
@@ -256,21 +283,31 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
             catch ex
                 ['error: adding pre handler to block: ', blk]
                 ex
+                getReport(ex)
+                i_err_pre = i_err_pre + 1;
             end
             try
                 h_post(i_model) = add_exec_event_listener(blk, 'PostOutputs', @daikon_dtrace_callback_postoutputs);
             catch ex
                 ['error: adding post handler to block: ', blk]
                 ex
+                getReport(ex)
+                i_err_post = i_err_post + 1;
             end
         end
     end
+    ['Total blocks with pre or post errors: pre: ', num2str(i_err_pre), ' and post: ', num2str(i_err_post)]
 
     % TODO: look at adding callbacks at other times, identify the canonical
     % times (like c's function entry and exit)
     % source: http://www.mathworks.com/help/simulink/slref/add_exec_event_listener.html
 
     %rto.OutputPort(1).Data
+    
+    if i_err_pre == i_err_post && i_err_pre == models_inst_count && i_err_post == models_inst_count
+        ['ERROR: no blocks instrumented, exiting.']
+        return;
+    end
     
     time_siminst_start = toc;
 

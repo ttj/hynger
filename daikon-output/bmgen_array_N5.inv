@@ -1,0 +1,202 @@
+Daikon version 5.1.8, released September 30, 2014; http://plse.cs.washington.edu/daikon.
+Reading declaration files [12:35:50 AM]:                                                                                                                                                                                                                               Processing trace data; reading 1 dtrace file:
+[12:35:51 AM]: Reading ..\daikon-output\output_bmgen_array_N5.dtrace (line 6485[12:35:52 AM]: Finished reading ..\daikon-output\output_bmgen_array_N5.dtrace  
+                                                                                                                                                              ===========================================================================
+..Chart:::ENTER
+::time == ::x_in1
+::x_out1 == ::x_in7
+::x_out1 == 0.0
+::x_in2 >= 1.0
+::x_in3 == 5.0
+::x_in4 == 4.0
+::x_in5[] elements <= 0.00745
+::x_in5[] elements >= 4.3333E-4
+::x_in6 == 0.003
+size(::x_in5[]) == 5
+::time >= ::x_out1
+::time < ::x_in2
+::time < ::x_in3
+::time < ::x_in4
+::time < ::x_in6
+::x_out1 < ::x_in2
+::x_in5[] elements > ::x_out1
+::x_in2 <= ::x_in3
+::x_in5[] elements < ::x_in2
+::x_in2 > ::x_in6
+::x_in5[] elements < ::x_in3
+::x_in5[] elements < ::x_in4
+===========================================================================
+..Chart:::EXIT
+::time == ::x_in1
+::time == orig(::time)
+::time == orig(::x_in1)
+::x_out1 == ::x_in7
+::x_out1 == orig(::x_out1)
+::x_out1 == orig(::x_in7)
+::x_in2 == orig(::x_in2)
+::x_in3 == orig(::x_in3)
+::x_in4 == orig(::x_in4)
+::x_in5[] == orig(::x_in5[])
+::x_in6 == orig(::x_in6)
+::x_out1 == 0.0
+::x_in2 >= 1.0
+::x_in3 == 5.0
+::x_in4 == 4.0
+::x_in5[] elements <= 0.00745
+::x_in5[] elements >= 4.3333E-4
+::x_in6 == 0.003
+size(::x_in5[]) == 5
+::time >= ::x_out1
+::time < ::x_in2
+::time < ::x_in3
+::time < ::x_in4
+::time < ::x_in6
+::x_out1 < ::x_in2
+::x_in5[] elements > ::x_out1
+::x_in2 <= ::x_in3
+::x_in5[] elements < ::x_in2
+::x_in2 > ::x_in6
+::x_in5[] elements < ::x_in3
+::x_in5[] elements < ::x_in4
+===========================================================================
+..DC-to-DC_Converter1:::ENTER
+::x_out4 == ::x_in3
+::x_in4[] == ::x_in6[]
+::x_in4[] == ::x_in8[]
+::x_in4[] == ::x_in9[]
+::x_in5[] < ::x_in7[] (lexically)
+::x_in5[] <= ::x_in7[] (lexically)
+size(::x_in4[]) == size(::x_in5[])
+size(::x_in4[]) == size(::x_in7[])
+::x_out3 one of { 1.0, 2.0 }
+::x_out4 == 0.72645
+::x_in1 == 12.781
+::x_in2 == 4.0E-6
+::x_in4[] == [0.0, 0.0]
+::x_in4[] elements == 0.0
+::x_in5[] elements >= 0.0
+::x_in5[] sorted by <
+::x_in7[] elements >= 0.0
+::x_in7[] sorted by >
+size(::x_in4[]) == 2
+::time < ::i_L
+::time < ::x_out3
+::time < ::x_out4
+::time < ::x_in1
+::i_L != ::x_out3
+::i_L != ::x_out4
+::i_L != ::x_in1
+::i_L != ::x_in2
+::x_out2 != ::x_out3
+::x_out2 != ::x_out4
+::x_out2 != ::x_in1
+::x_out2 != ::x_in2
+::x_out3 > ::x_out4
+::x_out3 < ::x_in1
+::x_out3 > ::x_in2
+::x_in4[] <= ::x_in5[] (elementwise)
+::x_in4[] <= ::x_in7[] (elementwise)
+===========================================================================
+..DC-to-DC_Converter1:::EXIT
+::time == orig(::time)
+::i_L == orig(::i_L)
+::x_out2 == orig(::x_out2)
+::x_out4 == ::x_in3
+::x_out4 == orig(::x_out4)
+::x_out4 == orig(::x_in3)
+::x_in1 == orig(::x_in1)
+::x_in2 == orig(::x_in2)
+::x_in4[] == ::x_in6[]
+::x_in4[] == ::x_in8[]
+::x_in4[] == ::x_in9[]
+::x_in4[] == orig(::x_in4[])
+::x_in4[] == orig(::x_in6[])
+::x_in4[] == orig(::x_in8[])
+::x_in4[] == orig(::x_in9[])
+::x_in5[] < ::x_in7[] (lexically)
+::x_in5[] <= ::x_in7[] (lexically)
+::x_in5[] == orig(::x_in5[])
+::x_in7[] == orig(::x_in7[])
+size(::x_in4[]) == size(::x_in5[])
+size(::x_in4[]) == size(::x_in7[])
+size(::x_in4[]) == orig(size(::x_in5[]))
+size(::x_in4[]) == orig(size(::x_in7[]))
+::x_out3 one of { 1.0, 2.0 }
+::x_out4 == 0.72645
+::x_in1 == 12.781
+::x_in2 == 4.0E-6
+::x_in4[] == [0.0, 0.0]
+::x_in4[] elements == 0.0
+::x_in5[] elements >= 0.0
+::x_in5[] sorted by <
+::x_in7[] elements >= 0.0
+::x_in7[] sorted by >
+size(::x_in4[]) == 2
+::time < ::i_L
+::time < ::x_out3
+::time < ::x_out4
+::time < ::x_in1
+::time < orig(::x_out3)
+::i_L != ::x_out3
+::i_L != ::x_out4
+::i_L != ::x_in1
+::i_L != ::x_in2
+::i_L != orig(::x_out3)
+::x_out2 != ::x_out3
+::x_out2 != ::x_out4
+::x_out2 != ::x_in1
+::x_out2 != ::x_in2
+::x_out2 != orig(::x_out3)
+::x_out3 > ::x_out4
+::x_out3 < ::x_in1
+::x_out3 > ::x_in2
+::x_out4 < orig(::x_out3)
+::x_in1 > orig(::x_out3)
+::x_in2 < orig(::x_out3)
+::x_in4[] <= ::x_in5[] (elementwise)
+::x_in4[] <= ::x_in7[] (elementwise)
+===========================================================================
+..RMS_:::ENTER
+::x_out1 == ::x_in1
+::x_out1 == 0.0
+::x_in2 one of { 0.0, 1.0 }
+::time > ::x_out1
+::time != ::x_in2
+::x_out1 <= ::x_in2
+===========================================================================
+..RMS_:::EXIT
+::time == orig(::time)
+::x_out1 == ::x_in1
+::x_out1 == orig(::x_out1)
+::x_out1 == orig(::x_in1)
+::x_in2 == orig(::x_in2)
+::x_out1 == 0.0
+::x_in2 one of { 0.0, 1.0 }
+::time > ::x_out1
+::time != ::x_in2
+::x_out1 <= ::x_in2
+===========================================================================
+..TrueRMS_:::ENTER
+::x_out1 one of { 0.0, 120.0 }
+::x_in1 == 0.0
+::x_in2 one of { 0.0, 1.0 }
+::time != ::x_out1
+::time > ::x_in1
+::time != ::x_in2
+::x_out1 >= ::x_in1
+::x_in1 <= ::x_in2
+===========================================================================
+..TrueRMS_:::EXIT
+::time == orig(::time)
+::x_out1 == orig(::x_out1)
+::x_in1 == orig(::x_in1)
+::x_in2 == orig(::x_in2)
+::x_out1 one of { 0.0, 120.0 }
+::x_in1 == 0.0
+::x_in2 one of { 0.0, 1.0 }
+::time != ::x_out1
+::time > ::x_in1
+::time != ::x_in2
+::x_out1 >= ::x_in1
+::x_in1 <= ::x_in2
+Exiting Daikon.

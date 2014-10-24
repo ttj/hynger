@@ -27,8 +27,7 @@ function [out] = daikon_dtrace_write_data(simTime, simData, ppt_name, opt_datafl
 
                     % val will be a pointer to the data
                     for j = 1 : simData(i).length
-                        daikon.Runtime.dtrace.print(num2str(simData(i).val(j)));
-                        daikon.Runtime.dtrace.print(' ');
+                        daikon.Runtime.dtrace.print([num2str(simData(i).val(j)), ' ']);
                     end
                     daikon.Runtime.dtrace.println(' ]'); % newline
                 else
