@@ -14,7 +14,7 @@ Cyber-Physical Specification Mismatch Identification with Dynamic Analysis
 
 INSTALLATION:
 
-Download Daikon and put daikon.jar at the path:
+[Download Daikon](http://plse.cs.washington.edu/daikon/download/) and put daikon\daikon.jar at the path:
 
 hynger\lib\daikon.jar
 
@@ -26,7 +26,7 @@ Several examples are included in the directory examples/.
 
 A buck converter with hysteresis controller is described in 'buck_hvoltage_discrete.slx' (or .mdl).
 
-These include the case study described in the ICCPS 2015 submission, as well as other models tested (from the ARCH 2014 workshop and models provided by Mathworks with Matlab).
+These include the case study described in the ICCPS 2015 submission, as well as other models tested (from the ARCH 2014 workshop, models provided by Mathworks with Matlab, etc.).
 
 RUNNING:
 
@@ -43,7 +43,7 @@ daikon-output\output_buck_hvoltage_discrete.dtrace
 daikon-output\output_buck_hvoltage_discrete.inv
 
 NOTES:
-* This will automatically try to call Daikon (specified by the second argument 1).  In case of problems using this (as the Matlab-to-Java interface is delicate), you may try:
+* This will automatically try to call Daikon (specified by the second argument 1).  In case of problems using this (as the Matlab-to-Java interface is a little delicate and can cause Matlab to crash if the called Java program terminates with certain exit codes), you may try:
 
 clear all ; hynger('buck_hvoltage_discrete', 0)
 
