@@ -10,7 +10,7 @@ Hynger instruments Simulink/Stateflow (SLSF) block diagrams to generate textual 
 Hynger is described in a paper under review:
 
 Cyber-Physical Specification Mismatch Identification with Dynamic Analysis
-[Submission PDF](http://verivital.com/hynger/johnson2015iccps_submission.pdf)
+[Submission PDF](http://verivital.com/hynger/)
 
 INSTALLATION:
 
