@@ -23,26 +23,27 @@
     <param name="Ii_dn" type="real" local="false" d1="1" d2="1" dynamics="const" />
     <param name="Ip_up" type="real" local="false" d1="1" d2="1" dynamics="const" />
     <param name="Ip_dn" type="real" local="false" d1="1" d2="1" dynamics="const" />
-    <param name="omegai_l" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <param name="tmax" type="real" local="false" d1="1" d2="1" dynamics="const" />
     <param name="omegai_u" type="real" local="false" d1="1" d2="1" dynamics="const" />
     <param name="omegap_l" type="real" local="false" d1="1" d2="1" dynamics="const" />
     <param name="omegap_u" type="real" local="false" d1="1" d2="1" dynamics="const" />
     <param name="mode" type="real" local="false" d1="1" d2="1" dynamics="any" />
+    <param name="gt" type="real" local="false" d1="1" d2="1" dynamics="any" />
     <location id="1" name="up_1" x="694.0" y="165.0" width="230.0" height="76.0">
       <invariant>phi_ref &gt;= -4 &amp; phi_ref&lt;= 7 &amp; phi_v &gt;= -4 &amp; phi_v &lt;= 7 &amp; mode == 2</invariant>
-      <flow>v_i' == Ii_up/C_i &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+ Ip_up / C_p1 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0</flow>
+      <flow>v_i' == Ii_up/C_i &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+ Ip_up / C_p1 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0 &amp; gt' == 1</flow>
     </location>
     <location id="2" name="both_0" x="298.0" y="165.0" width="226.0" height="80.0">
       <invariant>phi_ref &gt;= -4 &amp; phi_ref&lt;= 7 &amp; phi_v &gt;= -4 &amp; phi_v &lt;= 7 &amp; mode == 1</invariant>
-      <flow>v_i' == 0 &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+0 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0</flow>
+      <flow>v_i' == 0 &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+0 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0 &amp; gt' == 1</flow>
     </location>
     <location id="3" name="dn_1" x="299.0" y="329.0" width="258.0" height="70.0">
       <invariant>phi_ref &gt;= -4 &amp; phi_ref&lt;= 7 &amp; phi_v &gt;= -4 &amp; phi_v &lt;= 7 &amp; mode == 4</invariant>
-      <flow>v_i' == Ii_dn/C_i &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+ Ip_dn/ C_p1 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0</flow>
+      <flow>v_i' == Ii_dn/C_i &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+ Ip_dn/ C_p1 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0 &amp; gt' == 1</flow>
     </location>
     <location id="4" name="both_1" x="695.0" y="329.0" width="226.0" height="66.0">
       <invariant>phi_ref &gt;= -4 &amp; phi_ref&lt;= 7 &amp; phi_v &gt;= -4 &amp; phi_v &lt;= 7 &amp; mode == 3</invariant>
-      <flow>v_i' == (Ii_up+ Ii_dn)/C_i &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+ (Ip_up + Ip_dn)/ C_p1 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0</flow>
+      <flow>v_i' == (Ii_up+ Ii_dn)/C_i &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+ (Ip_up + Ip_dn)/ C_p1 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0 &amp; gt' == 1</flow>
     </location>
     <transition source="2" target="1">
       <label>jump</label>
@@ -82,6 +83,8 @@
     <param name="phi_v" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
     <param name="phi_ref" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
     <param name="t" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="mode" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="gt" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
     <param name="f_ref" type="real" local="false" d1="1" d2="1" dynamics="const" controlled="true" />
     <param name="f_0" type="real" local="false" d1="1" d2="1" dynamics="const" controlled="true" />
     <param name="N" type="real" local="false" d1="1" d2="1" dynamics="const" controlled="true" />
@@ -97,12 +100,11 @@
     <param name="Ii_dn" type="real" local="false" d1="1" d2="1" dynamics="const" controlled="true" />
     <param name="Ip_up" type="real" local="false" d1="1" d2="1" dynamics="const" controlled="true" />
     <param name="Ip_dn" type="real" local="false" d1="1" d2="1" dynamics="const" controlled="true" />
-    <param name="omegai_l" type="real" local="false" d1="1" d2="1" dynamics="const" controlled="true" />
+    <param name="tmax" type="real" local="false" d1="1" d2="1" dynamics="const" controlled="true" />
     <param name="omegai_u" type="real" local="false" d1="1" d2="1" dynamics="const" controlled="true" />
     <param name="omegap_l" type="real" local="false" d1="1" d2="1" dynamics="const" controlled="true" />
     <param name="omegap_u" type="real" local="false" d1="1" d2="1" dynamics="const" controlled="true" />
-    <param name="mode" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
-    <bind component="pll" as="pll_1" x="367.0" y="231.0">
+    <bind component="pll" as="pll_1" x="360.0" y="257.0">
       <map key="v_i">v_i</map>
       <map key="v_p1">v_p1</map>
       <map key="v_p">v_p</map>
@@ -124,11 +126,12 @@
       <map key="Ii_dn">-10.1e-6</map>
       <map key="Ip_up">505e-6</map>
       <map key="Ip_dn">-505e-6</map>
-      <map key="omegai_l">0</map>
+      <map key="tmax">3e-8</map>
       <map key="omegai_u">0.7</map>
       <map key="omegap_l">-4</map>
       <map key="omegap_u">12</map>
       <map key="mode">mode</map>
+      <map key="gt">gt</map>
     </bind>
   </component>
 </sspaceex>
