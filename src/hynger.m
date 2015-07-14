@@ -87,8 +87,8 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
     full_path
     addpath(full_path);
     
-    model_filepath_slx = [model_filepath, '.slx'];
     model_filepath_mdl = [model_filepath, '.mdl'];
+    model_filepath_slx = [model_filepath, '.slx'];
     
     model_filepath
     
@@ -103,8 +103,14 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
     end
     
     if exist(model_filepath_slx, 'file') && exist(model_filepath_mdl, 'file')
-        ['WARNING: both .mdl and .slx files exist. Continuing.']
+        ['WARNING: both .mdl and .slx files exist. Continuing and trying to prefer .mdl by default, or given extension if provided (e.g., example.slx will use example.slx even if example.mdl exists; example alone will use .mdl). There is no way to load anything other than the .slx by default, if you need to load the .mdl, remove the .slx.']
+        if length(ext) > 0
+            model_filepath = [model_filepath, ext];
+        elseif length(ext) <= 0
+            model_filepath = model_filepath_mdl;
+        end
     end
+    
     
     try
         % stop simulation in case started from previous run or by user (avoids error)
@@ -113,8 +119,11 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
     catch
     end
     
+    model_filepath
     open_system(model_filepath);
     
+    % TODO: evaluate load_system (which does this without pulling up model)
+        
     % simulate diagram without instrumentation and record time
     if opt_benchmark
         time_simulate_start = toc;
