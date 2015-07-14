@@ -13,11 +13,13 @@ table_all = [''];
 
 %for mdlname = {'buck_hvoltage_discrete', 'arch2014jin_AbstractFuelControl_M1_Aquino', 'arch2014jin_AbstractFuelControl_M2'}
 %for mdlname = {'buck_hvoltage_discrete', 'staliro/heat25830_staliro_01', 'arch2014jin_AbstractFuelControl_M1_Aquino', 'arch2014jin_AbstractFuelControl_M2'}
-for mdlname = {'staliro/heat25830_staliro_01', 'arch2014jin_AbstractFuelControl_M1_Aquino', 'arch2014jin_AbstractFuelControl_M2'}
+%for mdlname = {'staliro/heat25830_staliro_01', 'arch2014jin_AbstractFuelControl_M1_Aquino', 'arch2014jin_AbstractFuelControl_M2'}
+%for mdlname = {'arch2014jin_AbstractFuelControl_M1_Aquino', 'arch2014jin_AbstractFuelControl_M2','staliro/heat25830_staliro_01'}
+for mdlname = {'arch2014jin_AbstractFuelControl_M2','staliro/heat25830_staliro_01'}
 %for mdlname = {'buck_hvoltage_discrete'}
     mdlname = char(mdlname);
     i_opt = 1;
-    for opt_mode = [1:2]%[0 : 1 : 2]
+    for opt_mode = [1]%[1:2]%[0 : 1 : 2]
         for i = 1 : num_sim
             ['Starting iteration: ', num2str(i)]
             [time_simulate(i), time_siminst(i), time_daikon(i), models_all_count(i), models_inst_count(i)] = hynger(mdlname, 1, opt_mode);
