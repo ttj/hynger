@@ -30,19 +30,19 @@
     <param name="mode" type="real" local="false" d1="1" d2="1" dynamics="any" />
     <param name="gt" type="real" local="false" d1="1" d2="1" dynamics="any" />
     <location id="1" name="up_1" x="694.0" y="165.0" width="230.0" height="76.0">
-      <invariant>phi_ref &gt;= -4 &amp; phi_ref&lt;= 7 &amp; phi_v &gt;= -4 &amp; phi_v &lt;= 7 &amp; mode == 2</invariant>
+      <invariant>phi_ref &gt;= 0 &amp; phi_ref &lt;= 6.283 &amp; phi_v &gt;= -2.527 &amp; phi_v &lt;= 3.756 &amp; mode == 2</invariant>
       <flow>v_i' == Ii_up/C_i &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+ Ip_up / C_p1 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0 &amp; gt' == 1</flow>
     </location>
     <location id="2" name="both_0" x="298.0" y="165.0" width="226.0" height="80.0">
-      <invariant>phi_ref &gt;= -4 &amp; phi_ref&lt;= 7 &amp; phi_v &gt;= -4 &amp; phi_v &lt;= 7 &amp; mode == 1</invariant>
+      <invariant>phi_ref &gt;= 0 &amp; phi_ref &lt;= 6.283 &amp; phi_v &gt;= -2.527 &amp; phi_v &lt;= 3.756 &amp; mode == 1</invariant>
       <flow>v_i' == 0 &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+0 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0 &amp; gt' == 1</flow>
     </location>
     <location id="3" name="dn_1" x="299.0" y="329.0" width="258.0" height="70.0">
-      <invariant>phi_ref &gt;= -4 &amp; phi_ref&lt;= 7 &amp; phi_v &gt;= -4 &amp; phi_v &lt;= 7 &amp; mode == 4</invariant>
+      <invariant>phi_ref &gt;= 0 &amp; phi_ref &lt;= 6.283 &amp; phi_v &gt;= -2.527 &amp; phi_v &lt;= 3.756 &amp; mode == 4</invariant>
       <flow>v_i' == Ii_dn/C_i &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+ Ip_dn/ C_p1 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0 &amp; gt' == 1</flow>
     </location>
     <location id="4" name="both_1" x="695.0" y="329.0" width="226.0" height="66.0">
-      <invariant>phi_ref &gt;= -4 &amp; phi_ref&lt;= 7 &amp; phi_v &gt;= -4 &amp; phi_v &lt;= 7 &amp; mode == 3</invariant>
+      <invariant>phi_ref &gt;= 0 &amp; phi_ref &lt;= 6.283 &amp; phi_v &gt;= -2.527 &amp; phi_v &lt;= 3.756 &amp; mode == 3</invariant>
       <flow>v_i' == (Ii_up+ Ii_dn)/C_i &amp; v_p1' == -1*( v_p1/C_p1)*(1/R_p2 + 1/R_p3) + v_p/(C_p1 * R_p3)+ (Ip_up + Ip_dn)/ C_p1 &amp; v_p' == v_p1/(C_p3*R_p3) - v_p/(C_p3 * R_p3) &amp; phi_v' == v_i*K_i/N + v_p * K_p/N + 2*3.14* f_0/N &amp; phi_ref' == 2*3.14*f_ref &amp; mode' == 0 &amp; gt' == 1</flow>
     </location>
     <transition source="2" target="1">
