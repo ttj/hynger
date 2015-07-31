@@ -10,29 +10,29 @@
 
 idx_iL1 = 1;
 idx_vC1 = 2; 
-idx_iL2 = 3;
-idx_vC2 = 4;
+idx_iL2 = 4;
+idx_vC2 = 5;
 
 % other scope block
-idx_xpu1 = 7;
-idx_xpu2 = 10;
+idx_xpu1 = 3;
+idx_xpu2 = 6;
 
 
-subplot('Position', [0.11, 0.2, 0.22, 0.74]); % [left bottom width height]
-plot(ScopeData_states.time,ScopeData_states.signals(idx_iL1).values,'b','LineWidth',2);
+subplot('Position', [0.123, 0.2, 0.22, 0.74]); % [left bottom width height]
+plot(ScopeData.time,ScopeData.signals(idx_iL1).values,'b','LineWidth',2);
 axis tight;grid;
 xlabel('Time, Sec','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
 ylabel('i_{L1}, A','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
 % title('i_L : Comaprison');
 set(gca,'FontSize',20,'LineWidth',2);%'FontWeight','bold',
 
-subplot('Position', [0.40, 0.2, 0.22, 0.74]);
-plot(ScopeData_states.time,ScopeData_states.signals(idx_vC1).values,'b','LineWidth',2);axis tight;grid;
+subplot('Position', [0.432, 0.2, 0.22, 0.74]);
+plot(ScopeData.time,ScopeData.signals(idx_vC1).values,'b','LineWidth',2);axis tight;grid;
 xlabel('Time, Sec','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
 ylabel('v_{C1}, V','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
 set(gca,'FontSize',20,'LineWidth',2);%'FontWeight','bold',
 
-subplot('Position', [0.7, 0.2, 0.22, 0.74]);
+subplot('Position', [0.742, 0.2, 0.22, 0.74]);
 plot(ScopeData.time,ScopeData.signals(idx_xpu1).values,'b','LineWidth',2);axis tight;grid;
 xlabel('Time, Sec','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
 ylabel('x_{pu1}','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
@@ -62,29 +62,29 @@ text(.025,0.6,descr3, 'FontSize', 16);
 
 % plot figure for DC-DC converter # 2
 set(gcf, 'PaperUnits', 'inches');
-x_width=16.0 ;y_width=5.5;% Figure size
+x_width=15.5 ;y_width=5.5;% Figure size
 set(gcf,'PaperSize',[14.0 5.5]);
 set(gcf, 'PaperPosition', [-1.0 0 x_width y_width]); % set position on paper
-saveas(gcf,'dcmicrogrid_noattack_agent1.pdf')
+saveas(gcf,'dcmicrogrid_noattack_steadystate_agent1.pdf')
 
-%clf % clears current figure and plots the figure for agent 2
+%clf % clears current figure and plots the figure for agent 1
 figure;
 
-subplot('Position', [0.11, 0.2, 0.22, 0.74]); % [left bottom width height]
-plot(ScopeData_states.time,ScopeData_states.signals(idx_iL2).values,'b','LineWidth',2);
+subplot('Position', [0.123, 0.2, 0.22, 0.74]); % [left bottom width height]
+plot(ScopeData.time,ScopeData.signals(idx_iL2).values,'b','LineWidth',2);
 axis tight;grid;
 xlabel('Time, Sec','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
 ylabel('i_{L2}, A','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
 % title('i_L : Comaprison');
 set(gca,'FontSize',20,'LineWidth',2);%'FontWeight','bold',
 
-subplot('Position', [0.40, 0.2, 0.22, 0.74]);
-plot(ScopeData_states.time,ScopeData_states.signals(idx_vC2).values,'b','LineWidth',2);axis tight;grid;
+subplot('Position', [0.432, 0.2, 0.22, 0.74]);
+plot(ScopeData.time,ScopeData.signals(idx_vC2).values,'b','LineWidth',2);axis tight;grid;
 xlabel('Time, Sec','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
 ylabel('v_{C2}, V','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
 set(gca,'FontSize',20,'LineWidth',2);%'FontWeight','bold',
 
-subplot('Position', [0.7, 0.2, 0.22, 0.74]);
+subplot('Position', [0.742, 0.2, 0.22, 0.74]);
 plot(ScopeData.time,ScopeData.signals(idx_xpu2).values,'b','LineWidth',2);axis tight;grid;hold on;
 xlabel('Time, Sec','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
 ylabel('x_{pu2}','FontSize',20);%,'LineWidth',2)'FontWeight','bold',
@@ -114,8 +114,8 @@ text(.025,0.6,descr3, 'FontSize', 16);
 
 % plot figure for DC-DC converter # 2
 set(gcf, 'PaperUnits', 'inches');
-x_width=16.0 ;y_width=5.5;% Figure size
+x_width=15.5 ;y_width=5.5;% Figure size
 set(gcf,'PaperSize',[14.0 5.5]);
 set(gcf, 'PaperPosition', [-1.0 0 x_width y_width]); % set position on paper
-saveas(gcf,'dcmicrogrid_noattack_agent2.pdf')
+saveas(gcf,'dcmicrogrid_noattack_steadystate_agent2.pdf')
 
