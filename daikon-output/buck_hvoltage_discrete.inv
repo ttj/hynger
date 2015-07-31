@@ -1,6 +1,6 @@
 Daikon version 5.2.8, released July 1, 2015; http://plse.cs.washington.edu/daikon.
-Reading declaration files                                                                                [5:36:02 PM]:                                                                                                                                                 Processing trace data; reading 1 dtrace file:
-[5:36:03 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (li[5:36:04 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (li[5:36:05 PM]: Finished reading ..\daikon-output\output_buck_hvoltage_discrete.d
+Reading declaration files [3:39:05 PM]:                                                                                                                                                                                                                                Processing trace data; reading 1 dtrace file:
+[3:39:06 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (li[3:39:07 PM]: Reading ..\daikon-output\output_buck_hvoltage_discrete.dtrace (li[3:39:08 PM]: Finished reading ..\daikon-output\output_buck_hvoltage_discrete.d
                                                                                                                                                               ===========================================================================
 ..Controller:::ENTER
 ::time == ::time
