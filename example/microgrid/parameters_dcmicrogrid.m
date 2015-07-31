@@ -110,10 +110,10 @@ a2v2 = Pmc*a2xpi2;
 if opt_scenario == 0
 	Tmax = 2;
 	
-	% attack parameters
-	time_attack = 0.8;
-	attack_amplitude = 0.8; %volts
-	attack_frequency = 60; %hertz
+% 	% attack parameters
+% 	time_attack = 0.8;
+% 	attack_amplitude = 0.8; %volts
+% 	attack_frequency = 60; %hertz
 	
 	t_0 = 0;
 	iL1_0 = 0;
@@ -133,11 +133,11 @@ if opt_scenario == 0
 	xpi2_0 = 0;
 % steady state
 elseif opt_scenario == 1
-	Tmax = 0.25;
+	Tmax = 2;%0.25
 	
 	% attack parameters
-	time_attack = 0.1;
-	attack_amplitude = 0.4; %volts
+	time_attack = 0.6;
+	attack_amplitude = 0.8; %volts
 	attack_frequency = 60; %hertz
 	
 	t_0 = 0;
