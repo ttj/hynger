@@ -56,7 +56,7 @@ function [time_simulate, time_siminst, time_daikon, models_all_count, models_ins
         opt_inst_mode = 0;
     end
     
-    opt_benchmark = 1; % enable benchmarking mode to compare simulation times with and without instrumentation
+    opt_benchmark = 0; % enable benchmarking mode to compare simulation times with and without instrumentation
     opt_dataflow = 1; % 
     opt_time = 1; % 1 = include time variable, 0 = do not
     opt_multi = 0; % 1 = create multiple Daikon trace files, 0 = create a single large trace file over the entire simulation
