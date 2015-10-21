@@ -55,3 +55,9 @@ INSTRUMENTING OTHER BLOCKS:
 A) Every block mode: Instrumenting EVERY block in EVERY sub-diagram recursively.  This may not be desired, as it may incur a heavy performance overhead.  To change the blocks that are instrumented, see hynger.m.
 B) Whitelist mode: This mode instruments ONLY blocks specified in a whitelist, see hynger.m and block_whitelist_instrumentation.m.
 C) Blacklist mode: Another alternative mode is to instrument EVERY block except those provided by a blacklist (see hynger.m and the file block_blacklist_instrumentation.m).
+
+LICENSE:
+
+Hynger was developed with exclusive support provided by the Air Force Research Laboratory during the summer 2014 Visiting Faculty Research Program (VFRP) and by the Air Force Office of Scientific Research (AFOSR) during the summer 2015 Summer Faculty Fellowship Program (SFFP), both at the Information Directorate, in Rome, NY.
+
+Hynger is licensed under the Lesser GPL version 3 and the license file is included in the repository.
