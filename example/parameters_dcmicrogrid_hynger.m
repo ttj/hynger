@@ -1,8 +1,9 @@
 % This mfile loads parameters for the DC microgrid
 % Please refer to the block diagram for nomenclature of ODE parameters
+% This includes Cooperative controller for Proportinal Load Sharing (PLS) 
+% and Global Voltage Regulation (GVR) Modules
 clc
-clear all
-
+clear
 
 % TODO: Omar, everything here should be parameterized on N, i.e. you should
 % be using vectors and matrices for everything, such as R(1), R(2), etc.,
@@ -21,16 +22,16 @@ clear all
 % Go look at the solar array model again to see how this can be done, as the way this is set up now, the modeling is super ugly and hard to modify anything without wasting a lot of time: https://bitbucket.org/verivital/solar
 % 
 
-option_sim = 0  % set this option = 1 if you want to automatically simulate
-% the model and plot the results
-
 % scenario: 0 = startup, 1 = steady state
 opt_scenario = 0;
-
+% attack parameters
+time_attack = 0.6;
+attack_amplitude = 0.8; %volts
+attack_frequency = 60; %hertz
 Fs = 15000; % control frequency, hertz
 
 % Load parameters for converter # 1
-R1 = 20; %load resistance (Ohms)
+R1 = 30; %load resistance (Ohms)
 L1 = 2.65e-3; %inductance (Henry)
 C1 = 2.2e-3; %capacitance (Farad)
 rL1 = 520e-3; % parasitic inductive resistance (Ohms)
@@ -38,7 +39,7 @@ rs1 = 200e-3; % switching loss (Ohms)
 T1 = 1/Fs; % Time period (seconds)
 
 % Load parameters for converter # 2
-R2 = 20;
+R2 = 30;
 L2 = 2.65e-3;
 C2 = 2.2e-3;
 rL2 = 520e-3;
@@ -66,16 +67,18 @@ C = 0.5*A; % adjacency matrix for cooperative controller
 RD = [0.00 0; 0 0.00]; % droop controller parameters; if 0 => not used
 I = 3*[1 0; 0 1]; % I parameters for PI cooperative controller 
 P = 0.05*[1 0; 0 1];% P parameters for PI cooperative controller
+K = [1 0; 0 2]; % Matrix for the gain in noise cancellation module
 Pmc = 0.01; %P parameters for PI main controller
 Imc = 1; %I parameters for PI main controller
 % Calculate the equivalent parallel load for each converter
 Req = R1*R2/(R1+R2); % the same load resistance is used in each converter
+% Req = R1+R2;
 % Automatically calculate the ODE parameters for each converter
 % converter 1
 Vref1 = Vref(1);
 Vin1 = Vin(1);
 
-%% xi1 - Integrator of PI controller of the cooperative controller block
+%% xi1 - Integrator of PI controller of the PLS cooperative controller block
 axi1 = C(1,2)*I(1,1)*c1/Imax(1); %Considering Imax(1) = Imax(2); This may change for different ratings of the converters
 %% xpi1 - Integrator of PI controller of the main controller block
 a1xpi1 = Imc*c3;
@@ -110,11 +113,6 @@ a2v2 = Pmc*a2xpi2;
 if opt_scenario == 0
 	Tmax = 2;
 	
-	% attack parameters
-	time_attack = 0.8;
-	attack_amplitude = 0.8; %volts
-	attack_frequency = 60; %hertz
-	
 	t_0 = 0;
 	iL1_0 = 0;
 	vC1_0 = 0;
@@ -123,6 +121,11 @@ if opt_scenario == 0
 	xmc1_0 = 0;
 	xvo1_0 = 0;
 	xpi1_0 = 0;
+    vesti1_0 = 0;
+    westi1_0 = 0;
+    westii1_0 = 0;
+    vavgi1_0 = 0;
+    
 
 	iL2_0 = 0;
 	vC2_0 = 0;
@@ -131,60 +134,36 @@ if opt_scenario == 0
 	xmc2_0 = 0;
 	xvo2_0 = 0;
 	xpi2_0 = 0;
+    vesti2_0 = 0;
+    westi2_0 = 0;
+    westii2_0 = 0;
+    vavgi2_0 = 0;
 % steady state
 elseif opt_scenario == 1
-	Tmax = 2;%0.25
-	
-	% attack parameters
-	time_attack = 0.6;
-	attack_amplitude = 0.8; %volts
-	attack_frequency = 60; %hertz
+	Tmax = 1;%0.25
 	
 	t_0 = 0;
-	iL1_0 = 4.5;
+	iL1_0 = 3.2;
 	vC1_0 = 48.02;
-	xpu1_0 = 0.01275;
+	xpu1_0 = 0.008491;
 	xi1_0 = 0.01915;
 	xmc1_0 = 2.401;
 	xvo1_0 = 0.0103;
 	xpi1_0 = 0.51;
-	iL2_0 = 4.5;
+    vesti1_0 = 48.02;
+    westi1_0 = 0;
+    westii1_0 = 0;
+    vavgi1_0 = 0;
+
+    iL2_0 = 3.2;
 	vC2_0 = 48.02;
-	xpu2_0 = 0.01275;
+	xpu2_0 = 0.008491;
 	xi2_0 = 0.01915;
 	xmc2_0 = 2.401;
 	xvo2_0 = 0.0103;
 	xpi2_0 = 0.51;
-end
-
-if option_sim
-%simulate the model
-[tout,yout] = sim('dc_microgrid2');
-
-%plot results coverter # 1
-figure
-plot(tout,yout(:,3),'b-','LineWidth',2);grid;
-xlabel('Time,Sec');ylabel('v_{C1}, Volts');
-legend('Capacitor Voltage - Converter # 1','Location','SouthEast')
-figure
-plot(tout,yout(:,2),'r-','LineWidth',2);grid;
-xlabel('Time,Sec');ylabel('i_{L1}, Amps');
-legend('Inductor Current - Converter # 1')
-figure
-plot(yout(:,2),yout(:,3),'g-','LineWidth',2);grid;
-xlabel('i_{L1}, Amps');ylabel('v_{C1}, Volts');
-legend('Phase Plane Plot v_{C1} vs. i_{L1} - Converter # 1','Location','SouthEast');
-%plot results coverter # 2
-figure
-plot(tout,yout(:,12),'b-','LineWidth',2);grid;
-xlabel('Time,Sec');ylabel('v_{C2}, Volts');
-legend('Capacitor Voltage - Converter # 2','Location','SouthEast')
-figure
-plot(tout,yout(:,10),'r-','LineWidth',2);grid;
-xlabel('Time,Sec');ylabel('i_{L2}, Amps');
-legend('Inductor Current - Converter # 2')
-figure
-plot(yout(:,10),yout(:,12),'g-','LineWidth',2);grid;
-xlabel('i_{L1}, Amps');ylabel('v_{C1}, Volts');
-legend('Phase Plane Plot v_{C2} vs. i_{L2} - Converter # 2','Location','SouthEast');
+    vesti2_0 = 48.02;
+    westi2_0 = 0;
+    westii2_0 = 0;
+    vavgi2_0 = 0;
 end

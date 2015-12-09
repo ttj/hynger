@@ -1,0 +1,3 @@
+Daikon version 5.2.8, released July 1, 2015; http://plse.cs.washington.edu/daikon.
+Reading declaration files                                                                                [4:35:58 PM]:                                                                                                                                                 Processing trace data; reading 1 dtrace file:
+[4:35:59 PM]: Checking size of ..\daikon-output\output_dc_microgrid1_attack.dtr[4:36:00 PM]: Checking size of ..\daikon-output\output_dc_microgrid1_attack.dtr[4:36:01 PM]: Reading ..\daikon-output\output_dc_microgrid1_attack.dtrace (line
