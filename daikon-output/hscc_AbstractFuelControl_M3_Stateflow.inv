@@ -1,0 +1,1111 @@
+Daikon version 5.2.8, released July 1, 2015; http://plse.cs.washington.edu/daikon.
+Reading declaration files [3:20:01 PM]:                                                                                                                                                                                                                                Processing trace data; reading 1 dtrace file:
+[3:20:02 PM]: Reading ..\daikon-output\output_HSCC_Model3_Stateflow.dtrace (lin[3:20:03 PM]: Reading ..\daikon-output\output_HSCC_Model3_Stateflow.dtrace (lin[3:20:03 PM]: Finished reading ..\daikon-output\output_HSCC_Model3_Stateflow.dt
+                                                                               ===========================================================================
+..Calcuate_Error:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
+::x_in2 == ::x_in2
+::x_in3 == ::x_in3
+::x_in4 == ::x_in4
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 <= 0.0095003
+::x_out1 >= -0.0046823
+::x_in1 one of { 14.5524, 14.7 }
+::x_in1 != 0
+::x_in1 <= 14.8397
+::x_in1 >= 0
+::x_in1 >= 14.5158
+::x_in2 == 1.0
+::x_in2 != 0
+::x_in2 <= 1.0
+::x_in2 == 1
+::x_in2 >= 0
+::x_in2 >= 1.0
+::x_in3 == 14.7
+::x_in3 != 0
+::x_in3 <= 14.7
+::x_in3 >= 0
+::x_in3 >= 14.7
+::x_in4 one of { 0.0, 1.0 }
+::x_in4 <= 1.0
+::x_in4 >= 0
+::x_in4 >= 0.0
+::time - ::time == 0
+::time >= ::x_out1
+::time < ::x_in1
+::time < ::x_in3
+::time >= ::x_in4
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::x_in1
+::x_out1 < ::x_in2
+::x_out1 < ::x_in3
+::x_out1 <= ::x_in4
+::x_in1 - ::x_in1 == 0
+::x_in1 > ::x_in2
+::x_in1 <= ::x_in3
+::x_in1 > ::x_in4
+::x_in2 == ::x_in2**2
+::x_in2 == ::x_in2**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in2 + 0 == 0
+::x_in2 < ::x_in3
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in3 + 0 == 0
+::x_in2 >= ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in4 + 0 == 0
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in3+ 0 * ::x_in3 + 0 == 0
+::x_in3 > ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in3+ 0 * ::x_in4 + 0 == 0
+::x_in4 == ::x_in4**2
+::x_in4 == ::x_in4**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in4+ 0 * ::x_in4 + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::x_in1, ::x_in1)
+::x_in4 == (java.lang.Math.pow(::x_in4, ::time))
+::x_in4 == (java.lang.Math.pow(::x_in4, ::time))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in3)
+::x_out1 == (::x_out1 * ::x_in4)
+::x_out1 == (::x_out1 * ::x_in4)
+::x_in2 == (java.lang.Math.pow(::x_in2, ::x_out1))
+::x_in2 == (java.lang.Math.pow(::x_in2, ::x_out1))
+::x_in2 == (java.lang.Math.pow(::x_in4, ::x_out1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in2, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in3, ::x_in3)
+::x_in4 == (java.lang.Math.pow(::x_in4, ::x_in1))
+::x_in4 == (java.lang.Math.pow(::x_in4, ::x_in1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in3, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in3, ::x_in4)
+::x_in2 == (java.lang.Math.pow(::x_in4, ::x_in4))
+::x_in2 == (java.lang.Math.pow(::x_in4, ::x_in4))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in3, ::x_in4)
+::x_in4 == (java.lang.Math.pow(::x_in4, ::x_in3))
+::x_in4 == (java.lang.Math.pow(::x_in4, ::x_in3))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in4, ::x_in4)
+===========================================================================
+..Calcuate_Error:::EXIT
+::time == ::time
+::time == orig(::time)
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
+::x_in1 == orig(::x_in1)
+::x_in2 == ::x_in2
+::x_in2 == orig(::x_in2)
+::x_in3 == ::x_in3
+::x_in3 == orig(::x_in3)
+::x_in4 == ::x_in4
+::x_in4 == orig(::x_in4)
+orig(::x_out1) == orig(::x_out1)
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 <= 0.0095003
+::x_out1 >= -0.0046823
+::x_in1 one of { 14.5524, 14.7 }
+::x_in1 != 0
+::x_in1 <= 14.8397
+::x_in1 >= 0
+::x_in1 >= 14.5158
+::x_in2 == 1.0
+::x_in2 != 0
+::x_in2 <= 1.0
+::x_in2 == 1
+::x_in2 >= 0
+::x_in2 >= 1.0
+::x_in3 == 14.7
+::x_in3 != 0
+::x_in3 <= 14.7
+::x_in3 >= 0
+::x_in3 >= 14.7
+::x_in4 one of { 0.0, 1.0 }
+::x_in4 <= 1.0
+::x_in4 >= 0
+::x_in4 >= 0.0
+orig(::x_out1) <= 0.0095003
+orig(::x_out1) >= -0.0046823
+::time - ::time == 0
+::time >= ::x_out1
+::time < ::x_in1
+::time < ::x_in3
+::time >= ::x_in4
+::time >= orig(::x_out1)
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::x_in1
+::x_out1 < ::x_in2
+::x_out1 < ::x_in3
+::x_out1 <= ::x_in4
+::x_out1 <= orig(::x_out1)
+::x_in1 - ::x_in1 == 0
+::x_in1 > ::x_in2
+::x_in1 <= ::x_in3
+::x_in1 > ::x_in4
+::x_in1 > orig(::x_out1)
+::x_in2 == ::x_in2**2
+::x_in2 == ::x_in2**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in2 + 0 == 0
+::x_in2 < ::x_in3
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in3 + 0 == 0
+::x_in2 >= ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in4 + 0 == 0
+::x_in2 > orig(::x_out1)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in3+ 0 * ::x_in3 + 0 == 0
+::x_in3 > ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in3+ 0 * ::x_in4 + 0 == 0
+::x_in3 > orig(::x_out1)
+::x_in4 == ::x_in4**2
+::x_in4 == ::x_in4**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in4+ 0 * ::x_in4 + 0 == 0
+::x_in4 >= orig(::x_out1)
+orig(::x_out1) - orig(::x_out1) == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, orig(::x_out1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::x_in1, ::x_in1)
+::x_in4 == (java.lang.Math.pow(::x_in4, ::time))
+::x_in4 == (java.lang.Math.pow(::x_in4, ::time))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in3)
+::x_out1 == (::x_out1 * ::x_in4)
+::x_out1 == (::x_out1 * ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_in1, ::x_in1)
+::x_in2 == (java.lang.Math.pow(::x_in2, ::x_out1))
+::x_in2 == (java.lang.Math.pow(::x_in2, ::x_out1))
+::x_in2 == (java.lang.Math.pow(::x_in4, ::x_out1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in2, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in3, ::x_in3)
+::x_in4 == (java.lang.Math.pow(::x_in4, ::x_in1))
+::x_in4 == (java.lang.Math.pow(::x_in4, ::x_in1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, ::x_in4)
+::x_in2 == (java.lang.Math.pow(::x_in2, orig(::x_out1)))
+::x_in2 == (java.lang.Math.pow(::x_in2, orig(::x_out1)))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in3, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in3, ::x_in4)
+::x_in2 == (java.lang.Math.pow(::x_in4, ::x_in4))
+::x_in2 == (java.lang.Math.pow(::x_in4, ::x_in4))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in4, ::x_in4)
+::x_in2 == (java.lang.Math.pow(::x_in4, orig(::x_out1)))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, orig(::x_out1), orig(::x_out1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in3, ::x_in4)
+::x_in4 == (java.lang.Math.pow(::x_in4, ::x_in3))
+::x_in4 == (java.lang.Math.pow(::x_in4, ::x_in3))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, orig(::x_out1), orig(::x_out1))
+orig(::x_out1) == (::x_in4 * orig(::x_out1))
+orig(::x_out1) == (::x_in4 * orig(::x_out1))
+===========================================================================
+..Chart:::ENTER
+::time == ::time
+::p_out == ::p_out
+::I_out == ::I_out
+::pe_out == ::pe_out
+::i_out == ::i_out
+::x_in1 == ::x_in1
+::x_in2 == ::x_in2
+::x_in3 == ::x_in3
+::x_in4 == ::x_in4
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::p_out <= 1.0486
+::p_out >= 0
+::p_out >= 0.0
+::I_out one of { 0.0, 14.5479, 14.6978 }
+::I_out <= 14.8397
+::I_out >= 0
+::I_out >= 0.0
+::pe_out <= 0.90499
+::pe_out >= 0
+::pe_out >= 0.0
+::i_out one of { 0.0, 0.017 }
+::i_out <= 0.017
+::i_out >= 0
+::i_out >= 0.0
+::x_in1 != 0
+::x_in1 <= 246.7852
+::x_in1 >= 0
+::x_in1 >= 9.9069
+::x_in2 == 104.7198
+::x_in2 != 0
+::x_in2 <= 104.7198
+::x_in2 >= 0
+::x_in2 >= 104.7198
+::x_in2 >= 64
+::x_in3 one of { 0.0, 1.0 }
+::x_in3 <= 1.0
+::x_in3 >= 0
+::x_in3 >= 0.0
+::x_in4 == 0.0
+::x_in4 <= 4.9E-324
+::x_in4 == 0
+::x_in4 >= 0
+::x_in4 >= 0.0
+::time - ::time == 0
+::time <= ::I_out
+::time < ::x_in1
+::time < ::x_in2
+::time >= ::x_in4
+::p_out - ::p_out == 0
+::p_out <= ::I_out
+::p_out >= ::pe_out
+::p_out >= ::i_out
+::p_out < ::x_in1
+::p_out < ::x_in2
+::p_out >= ::x_in4
+::I_out - ::I_out == 0
+::I_out >= ::pe_out
+::I_out >= ::i_out
+::I_out != ::x_in1
+::I_out < ::x_in2
+::I_out != ::x_in3
+::I_out >= ::x_in4
+::pe_out - ::pe_out == 0
+::pe_out >= ::i_out
+::pe_out < ::x_in1
+::pe_out < ::x_in2
+::pe_out != ::x_in3
+::pe_out >= ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::i_out+ 0 * ::i_out + 0 == 0
+::i_out < ::x_in1
+::i_out < ::x_in2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::i_out+ 0 * ::x_in2 + 0 == 0
+::i_out != ::x_in3
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::i_out+ 0 * ::x_in3 + 0 == 0
+::i_out >= ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::i_out+ 0 * ::x_in4 + 0 == 0
+::x_in1 - ::x_in1 == 0
+::x_in1 != ::x_in2
+::x_in1 > ::x_in3
+::x_in1 > ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in2 + 0 == 0
+::x_in2 > ::x_in3
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in3 + 0 == 0
+::x_in2 > ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in4 + 0 == 0
+::x_in3 == ::x_in3**2
+::x_in3 == ::x_in3**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in3+ 0 * ::x_in3 + 0 == 0
+::x_in3 >= ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in3+ 0 * ::x_in4 + 0 == 0
+::x_in4 == ::x_in4**2
+::x_in4 == ::x_in4**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in4+ 0 * ::x_in4 + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in4)
+::x_in3 == (java.lang.Math.pow(::x_in3, ::time))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::time))
+::x_in4 == (::x_in4 / ::time)
+::x_in4 == (::x_in4 / ::time)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::p_out, ::p_out, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::p_out, ::p_out, ::x_in4)
+::x_in3 == (java.lang.Math.pow(::x_in3, ::p_out))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::p_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::I_out, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::I_out, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::x_in2, ::x_in4)
+::x_in3 == (java.lang.Math.pow(::x_in3, ::I_out))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::I_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::x_in3, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::pe_out, ::pe_out, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::pe_out, ::pe_out, ::x_in4)
+::x_in4 == (java.lang.Math.pow(::pe_out, ::x_in2))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::pe_out))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::pe_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::i_out, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::i_out, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::i_out, ::x_in4)
+::x_in4 == (java.lang.Math.pow(::i_out, ::x_in1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in2, ::x_in3)
+::x_in4 == (java.lang.Math.pow(::i_out, ::x_in2))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in2, ::x_in4)
+::x_in3 == (java.lang.Math.pow(::x_in3, ::i_out))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::i_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in3, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in3, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in4)
+::x_in3 == (java.lang.Math.pow(::x_in3, ::x_in1))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::x_in1))
+::x_in4 == (::x_in4 / ::x_in1)
+::x_in4 == (::x_in4 / ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, ::x_in4)
+::x_in3 == (java.lang.Math.pow(::x_in3, ::x_in2))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::x_in2))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in3, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in3, ::x_in4)
+::x_in4 == (::x_in4 / ::x_in2)
+::x_in4 == (::x_in4 / ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in3, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in4, ::x_in4)
+===========================================================================
+..Chart:::EXIT
+::time == ::time
+::time == orig(::time)
+::p_out == ::p_out
+::I_out == ::I_out
+::pe_out == ::pe_out
+::i_out == ::i_out
+::x_in1 == ::x_in1
+::x_in1 == orig(::x_in1)
+::x_in2 == ::x_in2
+::x_in2 == orig(::x_in2)
+::x_in3 == ::x_in3
+::x_in3 == orig(::x_in3)
+::x_in4 == ::x_in4
+::x_in4 == orig(::x_in4)
+orig(::p_out) == orig(::p_out)
+orig(::I_out) == orig(::I_out)
+orig(::pe_out) == orig(::pe_out)
+orig(::i_out) == orig(::i_out)
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::p_out != 0
+::p_out <= 1.0486
+::p_out >= 0
+::p_out >= 0.6353
+::I_out one of { 14.5524, 14.7 }
+::I_out != 0
+::I_out <= 14.8397
+::I_out >= 0
+::I_out >= 14.5158
+::pe_out != 0
+::pe_out <= 0.90499
+::pe_out >= 0
+::pe_out >= 0.5573
+::i_out == 0.017
+::i_out != 0
+::i_out <= 0.017
+::i_out >= 0
+::i_out >= 0.017
+::x_in1 != 0
+::x_in1 <= 246.7852
+::x_in1 >= 0
+::x_in1 >= 9.9069
+::x_in2 == 104.7198
+::x_in2 != 0
+::x_in2 <= 104.7198
+::x_in2 >= 0
+::x_in2 >= 104.7198
+::x_in2 >= 64
+::x_in3 one of { 0.0, 1.0 }
+::x_in3 <= 1.0
+::x_in3 >= 0
+::x_in3 >= 0.0
+::x_in4 == 0.0
+::x_in4 <= 4.9E-324
+::x_in4 == 0
+::x_in4 >= 0
+::x_in4 >= 0.0
+orig(::p_out) <= 1.0486
+orig(::p_out) >= 0
+orig(::p_out) >= 0.0
+orig(::I_out) one of { 0.0, 14.5479, 14.6978 }
+orig(::I_out) <= 14.8397
+orig(::I_out) >= 0
+orig(::I_out) >= 0.0
+orig(::pe_out) <= 0.90499
+orig(::pe_out) >= 0
+orig(::pe_out) >= 0.0
+orig(::i_out) one of { 0.0, 0.017 }
+orig(::i_out) <= 0.017
+orig(::i_out) >= 0
+orig(::i_out) >= 0.0
+::time - ::time == 0
+::time < ::I_out
+::time != ::i_out
+::time < ::x_in1
+::time < ::x_in2
+::time >= ::x_in4
+::time <= orig(::I_out)
+::p_out - ::p_out == 0
+::p_out < ::I_out
+::p_out > ::pe_out
+::p_out > ::i_out
+::p_out < ::x_in1
+::p_out < ::x_in2
+::p_out > ::x_in4
+::p_out >= orig(::p_out)
+orig(::p_out) % ::p_out == 0
+::p_out != orig(::I_out)
+::p_out > orig(::pe_out)
+::p_out > orig(::i_out)
+::I_out - ::I_out == 0
+::I_out > ::pe_out
+::I_out > ::i_out
+::I_out != ::x_in1
+::I_out < ::x_in2
+::I_out > ::x_in3
+::I_out > ::x_in4
+::I_out > orig(::p_out)
+::I_out >= orig(::I_out)
+orig(::I_out) % ::I_out == 0
+::I_out > orig(::pe_out)
+::I_out > orig(::i_out)
+::pe_out - ::pe_out == 0
+::pe_out > ::i_out
+::pe_out < ::x_in1
+::pe_out < ::x_in2
+::pe_out != ::x_in3
+::pe_out > ::x_in4
+::pe_out != orig(::p_out)
+::pe_out != orig(::I_out)
+::pe_out >= orig(::pe_out)
+orig(::pe_out) % ::pe_out == 0
+::pe_out > orig(::i_out)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::i_out+ 0 * ::i_out + 0 == 0
+::i_out < ::x_in1
+::i_out < ::x_in2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::i_out+ 0 * ::x_in2 + 0 == 0
+::i_out != ::x_in3
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::i_out+ 0 * ::x_in3 + 0 == 0
+::i_out > ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::i_out+ 0 * ::x_in4 + 0 == 0
+::i_out != orig(::p_out)
+::i_out != orig(::I_out)
+::i_out != orig(::pe_out)
+::i_out >= orig(::i_out)
+orig(::i_out) % ::i_out == 0
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::i_out+ 0 * orig(::i_out) + 0 == 0
+::x_in1 - ::x_in1 == 0
+::x_in1 != ::x_in2
+::x_in1 > ::x_in3
+::x_in1 > ::x_in4
+::x_in1 > orig(::p_out)
+::x_in1 != orig(::I_out)
+::x_in1 > orig(::pe_out)
+::x_in1 > orig(::i_out)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in2 + 0 == 0
+::x_in2 > ::x_in3
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in3 + 0 == 0
+::x_in2 > ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in4 + 0 == 0
+::x_in2 > orig(::p_out)
+::x_in2 > orig(::I_out)
+::x_in2 > orig(::pe_out)
+::x_in2 > orig(::i_out)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * orig(::i_out) + 0 == 0
+::x_in3 == ::x_in3**2
+::x_in3 == ::x_in3**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in3+ 0 * ::x_in3 + 0 == 0
+::x_in3 >= ::x_in4
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in3+ 0 * ::x_in4 + 0 == 0
+::x_in3 != orig(::I_out)
+::x_in3 != orig(::pe_out)
+::x_in3 != orig(::i_out)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in3+ 0 * orig(::i_out) + 0 == 0
+::x_in4 == ::x_in4**2
+::x_in4 == ::x_in4**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in4+ 0 * ::x_in4 + 0 == 0
+::x_in4 <= orig(::p_out)
+::x_in4 <= orig(::I_out)
+::x_in4 <= orig(::pe_out)
+::x_in4 <= orig(::i_out)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in4+ 0 * orig(::i_out) + 0 == 0
+orig(::p_out) - orig(::p_out) == 0
+orig(::p_out) <= orig(::I_out)
+orig(::p_out) >= orig(::pe_out)
+orig(::p_out) >= orig(::i_out)
+orig(::I_out) - orig(::I_out) == 0
+orig(::I_out) >= orig(::pe_out)
+orig(::I_out) >= orig(::i_out)
+orig(::pe_out) - orig(::pe_out) == 0
+orig(::pe_out) >= orig(::i_out)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * orig(::i_out)+ 0 * orig(::i_out) + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::I_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::i_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::I_out, ::I_out)
+::x_in3 == (java.lang.Math.pow(::x_in3, ::time))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::time))
+::x_in4 == (::x_in4 / ::time)
+::x_in4 == (::x_in4 / ::time)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::p_out, ::p_out, ::I_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::p_out, ::p_out, ::i_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::p_out, ::p_out, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::p_out, ::p_out, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::p_out, ::I_out, ::I_out)
+::x_in3 == (java.lang.Math.pow(::x_in3, ::p_out))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::p_out))
+::x_in4 == (::x_in4 / ::p_out)
+::x_in4 == (::x_in4 / ::p_out)
+orig(::p_out) == (java.lang.Math.min(::p_out, orig(::I_out)))
+9.128740239756656E15 * ::p_out - 9.128740239756656E15 * orig(::p_out) + 3.4114639260690598E17 * orig(::i_out) - 5.799488674317403E15 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::I_out, ::i_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::I_out, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::I_out, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::i_out, ::i_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::i_out, ::x_in2)
+::x_in4 == (java.lang.Math.pow(::i_out, ::I_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::i_out, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::x_in2, ::x_in4)
+::x_in3 == (java.lang.Math.pow(::x_in3, ::I_out))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::I_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::x_in3, ::x_in3)
+::x_in4 == (::x_in4 / ::I_out)
+::x_in4 == (::x_in4 / ::I_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::x_in4, ::x_in4)
+::x_in4 == (java.lang.Math.pow(orig(::i_out), ::I_out))
+7.96530409102848E15 * ::I_out - 7.965304091028161E15 * orig(::I_out) + 6.8876453022419978E18 * orig(::i_out) - 1.17089970138118656E17 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::pe_out, ::pe_out, ::i_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::pe_out, ::pe_out, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::pe_out, ::pe_out, ::x_in4)
+::x_in4 == (java.lang.Math.pow(::pe_out, ::x_in2))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::pe_out))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::pe_out))
+::x_in4 == (::x_in4 / ::pe_out)
+::x_in4 == (::x_in4 / ::pe_out)
+orig(::pe_out) == (java.lang.Math.min(::pe_out, orig(::p_out)))
+orig(::pe_out) == (java.lang.Math.min(::pe_out, orig(::I_out)))
+4.506355109766504E15 * ::pe_out - 4.506355109766505E15 * orig(::pe_out) + 1.47728923686639584E17 * orig(::i_out) - 2.511391702672873E15 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::i_out, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::i_out, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::i_out, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::i_out, orig(::I_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::i_out, orig(::i_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in1, ::x_in1)
+::x_in4 == (java.lang.Math.pow(::i_out, ::x_in1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in2, ::x_in3)
+::x_in4 == (java.lang.Math.pow(::i_out, ::x_in2))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in2, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in2, orig(::I_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in2, orig(::i_out))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::i_out))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::i_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in3, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in3, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in3, orig(::i_out))
+::x_in4 == (::x_in4 / ::i_out)
+::x_in4 == (::x_in4 / ::i_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in4, orig(::I_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, ::x_in4, orig(::i_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, orig(::p_out), orig(::p_out))
+orig(::i_out) == (java.lang.Math.min(::i_out, orig(::p_out)))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, orig(::I_out), orig(::I_out))
+orig(::i_out) == (java.lang.Math.min(::i_out, orig(::I_out)))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, orig(::pe_out), orig(::pe_out))
+orig(::i_out) == (java.lang.Math.min(::i_out, orig(::pe_out)))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::i_out, orig(::i_out), orig(::i_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in4)
+::x_in3 == (java.lang.Math.pow(::x_in3, ::x_in1))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::x_in1))
+::x_in4 == (::x_in4 / ::x_in1)
+::x_in4 == (::x_in4 / ::x_in1)
+::x_in4 == (java.lang.Math.pow(orig(::i_out), ::x_in1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, orig(::I_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in2, orig(::i_out))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::x_in2))
+::x_in3 == (java.lang.Math.pow(::x_in3, ::x_in2))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in3, ::x_in3)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in3, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in3, orig(::i_out))
+::x_in4 == (::x_in4 / ::x_in2)
+::x_in4 == (::x_in4 / ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in4, orig(::I_out))
+::x_in4 == (java.lang.Math.pow(orig(::pe_out), ::x_in2))
+::x_in4 == (java.lang.Math.pow(orig(::i_out), ::x_in2))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, ::x_in4, orig(::i_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, orig(::p_out), orig(::p_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, orig(::I_out), orig(::I_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, orig(::pe_out), orig(::pe_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, orig(::i_out), orig(::i_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in3, ::x_in4)
+::x_in3 == (java.lang.Math.pow(::x_in3, orig(::p_out)))
+::x_in3 == (java.lang.Math.pow(::x_in3, orig(::p_out)))
+::x_in3 == (java.lang.Math.pow(::x_in3, orig(::I_out)))
+::x_in3 == (java.lang.Math.pow(::x_in3, orig(::I_out)))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in3, orig(::I_out))
+::x_in3 == (java.lang.Math.pow(::x_in3, orig(::pe_out)))
+::x_in3 == (java.lang.Math.pow(::x_in3, orig(::pe_out)))
+::x_in3 == (java.lang.Math.pow(::x_in3, orig(::i_out)))
+::x_in3 == (java.lang.Math.pow(::x_in3, orig(::i_out)))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in3, orig(::i_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in4, ::x_in4)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, ::x_in4, orig(::i_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in3, orig(::i_out), orig(::i_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in4, ::x_in4, orig(::I_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in4, ::x_in4, orig(::i_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in4, orig(::p_out), orig(::p_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in4, orig(::I_out), orig(::I_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in4, orig(::pe_out), orig(::pe_out))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in4, orig(::i_out), orig(::i_out))
+===========================================================================
+..Failure:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 == 0.0
+::x_out1 <= 4.9E-324
+::x_out1 == 0
+::x_out1 >= 0
+::x_out1 >= 0.0
+::time - ::time == 0
+::time >= ::x_out1
+::x_out1 == ::x_out1**2
+::x_out1 == ::x_out1**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * ::x_out1 + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+::x_out1 == (::x_out1 / ::time)
+::x_out1 == (::x_out1 / ::time)
+===========================================================================
+..Failure:::EXIT
+::time == ::time
+::time == orig(::time)
+::x_out1 == ::x_out1
+::x_out1 == orig(::x_out1)
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 == 0.0
+::x_out1 <= 4.9E-324
+::x_out1 == 0
+::x_out1 >= 0
+::x_out1 >= 0.0
+::time - ::time == 0
+::time >= ::x_out1
+::x_out1 == ::x_out1**2
+::x_out1 == ::x_out1**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * ::x_out1 + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+::x_out1 == (::x_out1 / ::time)
+::x_out1 == (::x_out1 / ::time)
+===========================================================================
+..InputPoly:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 != 0
+::x_out1 <= 246.7852
+::x_out1 >= 0
+::x_out1 >= 9.9069
+::x_in1 != 0
+::x_in1 <= 62.268
+::x_in1 >= 0
+::x_in1 >= 8.8
+::time - ::time == 0
+::time < ::x_out1
+::time < ::x_in1
+::x_out1 - ::x_out1 == 0
+::x_out1 > ::x_in1
+::x_in1 - ::x_in1 == 0
+===========================================================================
+..InputPoly:::EXIT
+::time == ::time
+::time == orig(::time)
+::x_out1 == ::x_out1
+::x_out1 == orig(::x_out1)
+::x_in1 == ::x_in1
+::x_in1 == orig(::x_in1)
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 != 0
+::x_out1 <= 246.7852
+::x_out1 >= 0
+::x_out1 >= 9.9069
+::x_in1 != 0
+::x_in1 <= 62.268
+::x_in1 >= 0
+::x_in1 >= 8.8
+::time - ::time == 0
+::time < ::x_out1
+::time < ::x_in1
+::x_out1 - ::x_out1 == 0
+::x_out1 > ::x_in1
+::x_in1 - ::x_in1 == 0
+===========================================================================
+..Sensor_Failure_Detection_Latch:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::x_out1 == ::x_in1
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 == 0.0
+::x_out1 <= 4.9E-324
+::x_out1 == 0
+::x_out1 >= 0
+::x_out1 >= 0.0
+::time - ::time == 0
+::time >= ::x_out1
+::x_out1 == ::x_out1**2
+::x_out1 == ::x_out1**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * ::x_out1 + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+::x_out1 == (::x_out1 / ::time)
+::x_out1 == (::x_out1 / ::time)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_out1)
+===========================================================================
+..Sensor_Failure_Detection_Latch:::EXIT
+::time == ::time
+::time == orig(::time)
+::x_out1 == ::x_out1
+::x_out1 == ::x_in1
+::x_out1 == orig(::x_out1)
+::x_out1 == orig(::x_in1)
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 == 0.0
+::x_out1 <= 4.9E-324
+::x_out1 == 0
+::x_out1 >= 0
+::x_out1 >= 0.0
+::time - ::time == 0
+::time >= ::x_out1
+::x_out1 == ::x_out1**2
+::x_out1 == ::x_out1**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * ::x_out1 + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+::x_out1 == (::x_out1 / ::time)
+::x_out1 == (::x_out1 / ::time)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_out1)
+===========================================================================
+..StartMode:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 == 1.0
+::x_out1 != 0
+::x_out1 <= 1.0
+::x_out1 == 1
+::x_out1 >= 0
+::x_out1 >= 1.0
+::time - ::time == 0
+::x_out1 == ::x_out1**2
+::x_out1 == ::x_out1**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * ::x_out1 + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+===========================================================================
+..StartMode:::EXIT
+::time == ::time
+::time == orig(::time)
+::x_out1 == ::x_out1
+orig(::x_out1) == orig(::x_out1)
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 one of { 0.0, 1.0 }
+::x_out1 <= 1.0
+::x_out1 >= 0
+::x_out1 >= 0.0
+orig(::x_out1) == 1.0
+orig(::x_out1) != 0
+orig(::x_out1) <= 1.0
+orig(::x_out1) == 1
+orig(::x_out1) >= 0
+orig(::x_out1) >= 1.0
+::time - ::time == 0
+::x_out1 == ::x_out1**2
+::x_out1 == ::x_out1**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * ::x_out1 + 0 == 0
+::x_out1 <= orig(::x_out1)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * orig(::x_out1) + 0 == 0
+orig(::x_out1) == orig(::x_out1)**2
+orig(::x_out1) == orig(::x_out1)**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * orig(::x_out1)+ 0 * orig(::x_out1) + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, orig(::x_out1))
+::x_out1 == (java.lang.Math.pow(::x_out1, ::time))
+::x_out1 == (java.lang.Math.pow(::x_out1, ::time))
+orig(::x_out1) == (java.lang.Math.pow(::x_out1, ::x_out1))
+orig(::x_out1) == (java.lang.Math.pow(::x_out1, ::x_out1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, orig(::x_out1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, orig(::x_out1), orig(::x_out1))
+===========================================================================
+..Startup_Mode_Latch:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::x_in1 == ::x_in1
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 == 1.0
+::x_out1 != 0
+::x_out1 <= 1.0
+::x_out1 == 1
+::x_out1 >= 0
+::x_out1 >= 1.0
+::x_in1 one of { 0.0, 1.0 }
+::x_in1 <= 1.0
+::x_in1 >= 0
+::x_in1 >= 0.0
+::time - ::time == 0
+::x_out1 == ::x_out1**2
+::x_out1 == ::x_out1**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * ::x_out1 + 0 == 0
+::x_out1 >= ::x_in1
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * ::x_in1 + 0 == 0
+::x_in1 == ::x_in1**2
+::x_in1 == ::x_in1**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in1+ 0 * ::x_in1 + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in1)
+::x_in1 == (java.lang.Math.pow(::x_in1, ::time))
+::x_in1 == (java.lang.Math.pow(::x_in1, ::time))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in1)
+::x_out1 == (java.lang.Math.pow(::x_in1, ::x_in1))
+::x_out1 == (java.lang.Math.pow(::x_in1, ::x_in1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_in1, ::x_in1)
+::x_in1 == (::x_in1 * ::x_in1)
+::x_in1 == (::x_in1 * ::x_in1)
+::x_in1 == (::x_in1 * ::x_in1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in1, ::x_in1, ::x_in1)
+===========================================================================
+..Startup_Mode_Latch:::EXIT
+::time == ::time
+::time == orig(::time)
+::x_out1 == ::x_out1
+::x_out1 == ::x_in1
+::x_out1 == orig(::x_in1)
+orig(::x_out1) == orig(::x_out1)
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 one of { 0.0, 1.0 }
+::x_out1 <= 1.0
+::x_out1 >= 0
+::x_out1 >= 0.0
+orig(::x_out1) == 1.0
+orig(::x_out1) != 0
+orig(::x_out1) <= 1.0
+orig(::x_out1) == 1
+orig(::x_out1) >= 0
+orig(::x_out1) >= 1.0
+::time - ::time == 0
+::x_out1 == ::x_out1**2
+::x_out1 == ::x_out1**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * ::x_out1 + 0 == 0
+::x_out1 <= orig(::x_out1)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * orig(::x_out1) + 0 == 0
+orig(::x_out1) == orig(::x_out1)**2
+orig(::x_out1) == orig(::x_out1)**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * orig(::x_out1)+ 0 * orig(::x_out1) + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, orig(::x_out1))
+::x_out1 == (java.lang.Math.pow(::x_out1, ::time))
+::x_out1 == (java.lang.Math.pow(::x_out1, ::time))
+::x_out1 == (::x_out1 * ::x_out1)
+::x_out1 == (::x_out1 * ::x_out1)
+::x_out1 == (::x_out1 * ::x_out1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_out1)
+orig(::x_out1) == (java.lang.Math.pow(::x_out1, ::x_out1))
+orig(::x_out1) == (java.lang.Math.pow(::x_out1, ::x_out1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, orig(::x_out1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, orig(::x_out1), orig(::x_out1))
+===========================================================================
+..TrottleAngle:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::x_out2 == ::x_out2
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 == 0.0
+::x_out1 <= 4.9E-324
+::x_out1 == 0
+::x_out1 >= 0
+::x_out1 >= 0.0
+::x_out2 != 0
+::x_out2 <= 246.7852
+::x_out2 >= 0
+::x_out2 >= 9.9069
+::time - ::time == 0
+::time >= ::x_out1
+::time < ::x_out2
+::x_out1 == ::x_out1**2
+::x_out1 == ::x_out1**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * ::x_out1 + 0 == 0
+::x_out1 < ::x_out2
+::x_out2 - ::x_out2 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+::x_out1 == (::x_out1 / ::time)
+::x_out1 == (::x_out1 / ::time)
+::x_out1 == (::x_out1 / ::x_out2)
+::x_out1 == (::x_out1 / ::x_out2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out2, ::x_out2)
+===========================================================================
+..TrottleAngle:::EXIT
+::time == ::time
+::time == orig(::time)
+::x_out1 == ::x_out1
+::x_out1 == orig(::x_out1)
+::x_out2 == ::x_out2
+::x_out2 == orig(::x_out2)
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 == 0.0
+::x_out1 <= 4.9E-324
+::x_out1 == 0
+::x_out1 >= 0
+::x_out1 >= 0.0
+::x_out2 != 0
+::x_out2 <= 246.7852
+::x_out2 >= 0
+::x_out2 >= 9.9069
+::time - ::time == 0
+::time >= ::x_out1
+::time < ::x_out2
+::x_out1 == ::x_out1**2
+::x_out1 == ::x_out1**2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_out1+ 0 * ::x_out1 + 0 == 0
+::x_out1 < ::x_out2
+::x_out2 - ::x_out2 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+::x_out1 == (::x_out1 / ::time)
+::x_out1 == (::x_out1 / ::time)
+::x_out1 == (::x_out1 / ::x_out2)
+::x_out1 == (::x_out1 / ::x_out2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out2, ::x_out2)
+===========================================================================
+..V&V_stub_system:::ENTER
+::time == ::time
+::x_out1 == ::x_out1
+::I_out == ::I_out
+::x_in2 == ::x_in2
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 <= 0.0095003
+::x_out1 >= -0.0046823
+::I_out one of { 14.5524, 14.7 }
+::I_out != 0
+::I_out <= 14.8397
+::I_out >= 0
+::I_out >= 14.5158
+::x_in2 == 14.7
+::x_in2 != 0
+::x_in2 <= 14.7
+::x_in2 >= 0
+::x_in2 >= 14.7
+::time - ::time == 0
+::time >= ::x_out1
+::time < ::I_out
+::time < ::x_in2
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::I_out
+::x_out1 < ::x_in2
+::I_out - ::I_out == 0
+::I_out <= ::x_in2
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in2 + 0 == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::I_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::I_out, ::I_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::I_out, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::x_in2, ::x_in2)
+===========================================================================
+..V&V_stub_system:::EXIT
+::time == ::time
+::time == orig(::time)
+::x_out1 == ::x_out1
+::I_out == ::I_out
+::I_out == orig(::I_out)
+::x_in2 == ::x_in2
+::x_in2 == orig(::x_in2)
+orig(::x_out1) == orig(::x_out1)
+::time != 0
+::time <= 10.0
+::time >= 0
+::time >= 3.1554E-30
+::x_out1 <= 0.0095003
+::x_out1 >= -0.0046823
+::I_out one of { 14.5524, 14.7 }
+::I_out != 0
+::I_out <= 14.8397
+::I_out >= 0
+::I_out >= 14.5158
+::x_in2 == 14.7
+::x_in2 != 0
+::x_in2 <= 14.7
+::x_in2 >= 0
+::x_in2 >= 14.7
+orig(::x_out1) <= 0.0095003
+orig(::x_out1) >= -0.0046823
+::time - ::time == 0
+::time >= ::x_out1
+::time < ::I_out
+::time < ::x_in2
+::time >= orig(::x_out1)
+::x_out1 - ::x_out1 == 0
+::x_out1 < ::I_out
+::x_out1 < ::x_in2
+::x_out1 <= orig(::x_out1)
+::I_out - ::I_out == 0
+::I_out <= ::x_in2
+::I_out > orig(::x_out1)
+warning: too few samples for daikon.inv.binary.twoScalar.LinearBinaryFloat invariant: 0 * ::x_in2+ 0 * ::x_in2 + 0 == 0
+::x_in2 > orig(::x_out1)
+orig(::x_out1) - orig(::x_out1) == 0
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_out1)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::I_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::time, orig(::x_out1))
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::time, ::I_out, ::I_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::x_out1, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_out1, ::I_out, ::I_out)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::I_out, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::I_out, ::x_in2, ::x_in2)
+warning: too few samples for daikon.inv.ternary.threeScalar.LinearTernaryFloat invariant: (::x_in2, orig(::x_out1), orig(::x_out1))
+Exiting Daikon.
+                                                                               
