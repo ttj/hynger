@@ -1,194 +1,179 @@
 Daikon version 5.2.8, released July 1, 2015; http://plse.cs.washington.edu/daikon.
-Reading declaration files [10:37:28 PM]:                                                                                                                                                                                                                               Processing trace data; reading 1 dtrace file:
-[10:37:29 PM]: Checking size of ..\daikon-output\output_dc_microgrid.dtrace    [10:37:30 PM]: Checking size of ..\daikon-output\output_dc_microgrid.dtrace    [10:37:31 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 372, 0[10:37:32 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 164112[10:37:33 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 108481[10:37:34 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 219847[10:37:35 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 337365[10:37:36 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 462355[10:37:37 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 591283[10:37:38 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 717517[10:37:39 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 845039[10:37:40 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 973849[10:37:41 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 110266[10:37:42 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 123137[10:37:43 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 136026[10:37:44 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 148524[10:37:45 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 160900[10:37:46 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 173514[10:37:47 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 186209[10:37:48 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 198997[10:37:49 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 211853[10:37:50 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 224672[10:37:51 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 237579[10:37:52 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 250413[10:37:53 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 263348[10:37:54 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 276042[10:37:55 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 288582[10:37:56 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 301232[10:37:57 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 313820[10:37:58 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 326477[10:37:59 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 339003[10:38:00 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 351389[10:38:01 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 364201[10:38:02 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 376972[10:38:03 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 389895[10:38:04 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 402907[10:38:05 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 415768[10:38:06 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 428710[10:38:07 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 441652[10:38:08 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 454540[10:38:09 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 467301[10:38:10 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 480252[10:38:11 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 493166[10:38:12 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 506032[10:38:13 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 518989[10:38:14 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 531892[10:38:15 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 544612[10:38:16 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 557458[10:38:17 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 570361[10:38:18 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 583164[10:38:19 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 595914[10:38:20 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 608728[10:38:21 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 621734[10:38:22 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 634629[10:38:23 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 647673[10:38:24 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 660741[10:38:25 PM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 673636[10:38:25 PM]: Finished reading ..\daikon-output\output_dc_microgrid.dtrace    
-                                                                                                                                                              ===========================================================================
+Reading declaration files [11:36:02 AM]:                                                                                                                                                                                                                               Processing trace data; reading 1 dtrace file:
+[11:36:03 AM]: Reading ..\daikon-output\output_dc_microgrid.dtrace (line 427016[11:36:04 AM]: Finished reading ..\daikon-output\output_dc_microgrid.dtrace    
+                                                                               ===========================================================================
 ..Converter1:::ENTER
-::x_in3 >= -0.027444
-::time >= ::xpu1_out
-::time >= ::west1_out
-::time >= ::x_in1
-::time >= ::x_in3
-::iL1_out >= ::xpu1_out
-::iL1_out >= ::west1_out
-::iL1_out >= ::x_in1
-::iL1_out >= ::x_in3
-::vC1_out >= ::xpu1_out
-::vC1_out >= ::vest1_out
-::vC1_out >= ::west1_out
-::vC1_out >= ::x_in1
-::vC1_out >= ::x_in2
-::vC1_out >= ::x_in3
-::xpu1_out >= ::west1_out
-::xpu1_out >= ::x_in3
-::vest1_out >= ::west1_out
-::vest1_out >= ::x_in1
-::vest1_out >= ::x_in2
-::vest1_out >= ::x_in3
-::x_in1 <= ::x_in2
-::x_in1 >= ::x_in3
-::x_in2 >= ::x_in3
+::xpi1_out one of { 0.50993, 0.50999, 0.51005 }
+::xmc1_out == 2.401
+::time < ::iL1_out
+::time < ::xpi1_out
+::time != ::xvo1_out
+::time < ::xmc1_out
+::time < ::vC1_out
+::time != ::xpu1_out
+::time != ::x_in1
+::iL1_out > ::xi1_out
+::iL1_out > ::xpi1_out
+::iL1_out > ::xvo1_out
+::iL1_out > ::xmc1_out
+::iL1_out < ::vC1_out
+::iL1_out > ::xpu1_out
+::iL1_out > ::x_in1
+::xi1_out < ::xpi1_out
+::xi1_out > ::xvo1_out
+::xi1_out < ::xmc1_out
+::xi1_out < ::vC1_out
+::xi1_out > ::xpu1_out
+::xi1_out > ::x_in1
+::xpi1_out > ::xvo1_out
+::xpi1_out < ::xmc1_out
+::xpi1_out < ::vC1_out
+::xpi1_out > ::xpu1_out
+::xpi1_out > ::x_in1
+::xvo1_out < ::xmc1_out
+::xvo1_out < ::vC1_out
+::xvo1_out < ::xpu1_out
+::xvo1_out < ::x_in1
+::xmc1_out < ::vC1_out
+::xmc1_out > ::xpu1_out
+::xmc1_out > ::x_in1
+::vC1_out > ::xpu1_out
+::vC1_out > ::x_in1
+5.802843934142499E15 * ::iL1_out + 1.1659847745013369E22 * ::xi1_out + 1.50487086025779277E18 * ::vC1_out - 2.868232815898616E20 == 0
 ===========================================================================
 ..Converter1:::EXIT
 ::time == orig(::time)
 ::iL1_out == orig(::iL1_out)
+::xi1_out == orig(::xi1_out)
+::xpi1_out == orig(::xpi1_out)
+::xvo1_out == orig(::xvo1_out)
+::xmc1_out == orig(::xmc1_out)
 ::vC1_out == orig(::vC1_out)
 ::xpu1_out == orig(::xpu1_out)
-::vest1_out == orig(::vest1_out)
-::west1_out == orig(::west1_out)
 ::x_in1 == orig(::x_in1)
-::x_in2 == orig(::x_in2)
-::x_in3 == orig(::x_in3)
-::west1_out != 0
-::x_in3 >= -0.027444
-::time != ::vC1_out
-::time > ::xpu1_out
-::time != ::vest1_out
-::time > ::west1_out
-::time >= ::x_in1
-::time >= ::x_in3
-::time >= orig(::xpu1_out)
-::time >= orig(::west1_out)
-::iL1_out != ::vC1_out
+::xpi1_out one of { 0.50993, 0.50999, 0.51005 }
+::xmc1_out == 2.401
+::time < ::iL1_out
+::time < ::xpi1_out
+::time != ::xvo1_out
+::time < ::xmc1_out
+::time < ::vC1_out
+::time != ::xpu1_out
+::time != ::x_in1
+::iL1_out > ::xi1_out
+::iL1_out > ::xpi1_out
+::iL1_out > ::xvo1_out
+::iL1_out > ::xmc1_out
+::iL1_out < ::vC1_out
 ::iL1_out > ::xpu1_out
-::iL1_out > ::west1_out
-::iL1_out >= ::x_in1
-::iL1_out >= ::x_in3
-::iL1_out >= orig(::xpu1_out)
-::iL1_out >= orig(::west1_out)
+::iL1_out > ::x_in1
+::xi1_out < ::xpi1_out
+::xi1_out > ::xvo1_out
+::xi1_out < ::xmc1_out
+::xi1_out < ::vC1_out
+::xi1_out > ::xpu1_out
+::xi1_out > ::x_in1
+::xpi1_out > ::xvo1_out
+::xpi1_out < ::xmc1_out
+::xpi1_out < ::vC1_out
+::xpi1_out > ::xpu1_out
+::xpi1_out > ::x_in1
+::xvo1_out < ::xmc1_out
+::xvo1_out < ::vC1_out
+::xvo1_out < ::xpu1_out
+::xvo1_out < ::x_in1
+::xmc1_out < ::vC1_out
+::xmc1_out > ::xpu1_out
+::xmc1_out > ::x_in1
 ::vC1_out > ::xpu1_out
-::vC1_out >= ::vest1_out
-::vC1_out > ::west1_out
-::vC1_out >= ::x_in1
-::vC1_out >= ::x_in2
-::vC1_out >= ::x_in3
-2.2895645038036235E67 * ::vC1_out - 2.2895645038036235E67 * orig(::vC1_out) - 2.813874775174653E15 == 0
-::vC1_out >= orig(::xpu1_out)
-::vC1_out >= orig(::vest1_out)
-::vC1_out >= orig(::west1_out)
-::xpu1_out != ::vest1_out
-::xpu1_out > ::west1_out
-::xpu1_out >= ::x_in3
-::xpu1_out <= orig(::iL1_out)
-::xpu1_out <= orig(::vC1_out)
-8.802570127549133E68 * ::xpu1_out - 8.802570127549133E68 * orig(::xpu1_out) - 2.38012693678801E14 == 0
-::xpu1_out >= orig(::west1_out)
-::vest1_out > ::west1_out
-::vest1_out >= ::x_in1
-::vest1_out >= ::x_in2
-::vest1_out >= ::x_in3
-::vest1_out <= orig(::vC1_out)
-2.0529430278476435E82 * ::vest1_out - 2.0529430278476435E82 * orig(::vest1_out) - 1.059010660915207E15 == 0
-::vest1_out >= orig(::west1_out)
-::west1_out <= orig(::iL1_out)
-::west1_out <= orig(::vC1_out)
-::west1_out <= orig(::xpu1_out)
-::west1_out <= orig(::vest1_out)
-7.5816509060553615E84 * ::west1_out - 7.5816509060553615E84 * orig(::west1_out) - 2.092990549125643E15 == 0
-::x_in1 <= ::x_in2
-::x_in1 >= ::x_in3
-::x_in1 <= orig(::iL1_out)
-::x_in1 <= orig(::vC1_out)
-::x_in1 <= orig(::vest1_out)
-::x_in2 >= ::x_in3
-::x_in2 <= orig(::vC1_out)
-::x_in2 <= orig(::vest1_out)
-::x_in3 <= orig(::iL1_out)
-::x_in3 <= orig(::vC1_out)
-::x_in3 <= orig(::xpu1_out)
-::x_in3 <= orig(::vest1_out)
+::vC1_out > ::x_in1
+5.802843934142499E15 * ::iL1_out + 1.1659847745013369E22 * ::xi1_out + 1.50487086025779277E18 * ::vC1_out - 2.868232815898616E20 == 0
 ===========================================================================
 ..Converter2:::ENTER
-::west2_out >= -0.027444
-::time >= ::xpu2_out
-::time >= ::west2_out
-::time >= ::x_in1
-::time >= ::x_in3
-::iL2_out >= ::xpu2_out
-::iL2_out >= ::west2_out
-::iL2_out >= ::x_in1
-::iL2_out >= ::x_in3
-::vC2_out >= ::xpu2_out
-::vC2_out >= ::vest2_out
-::vC2_out >= ::west2_out
-::vC2_out >= ::x_in1
-::vC2_out >= ::x_in2
-::vC2_out >= ::x_in3
-::xpu2_out >= ::west2_out
-::xpu2_out >= ::x_in3
-::vest2_out >= ::west2_out
-::vest2_out >= ::x_in1
-::vest2_out >= ::x_in2
-::vest2_out >= ::x_in3
-::x_in1 <= ::x_in2
-::x_in1 >= ::x_in3
-::x_in2 >= ::x_in3
+::xpi2_out one of { 0.50993, 0.50999, 0.51005 }
+::xmc2_out == 2.401
+::time < ::iL2_out
+::time < ::vC2_out
+::time != ::xpu2_out
+::time != ::xvo2_out
+::time < ::xpi2_out
+::time < ::xmc2_out
+::time != ::x_in1
+::iL2_out < ::vC2_out
+::iL2_out > ::xpu2_out
+::iL2_out > ::xvo2_out
+::iL2_out > ::xpi2_out
+::iL2_out > ::xmc2_out
+::iL2_out > ::xi2_out
+::iL2_out > ::x_in1
+::vC2_out > ::xpu2_out
+::vC2_out > ::xvo2_out
+::vC2_out > ::xpi2_out
+::vC2_out > ::xmc2_out
+::vC2_out > ::xi2_out
+::vC2_out > ::x_in1
+::xpu2_out > ::xvo2_out
+::xpu2_out < ::xpi2_out
+::xpu2_out < ::xmc2_out
+::xpu2_out < ::xi2_out
+::xvo2_out < ::xpi2_out
+::xvo2_out < ::xmc2_out
+::xvo2_out < ::xi2_out
+::xvo2_out < ::x_in1
+::xpi2_out < ::xmc2_out
+::xpi2_out > ::xi2_out
+::xpi2_out > ::x_in1
+::xmc2_out > ::xi2_out
+::xmc2_out > ::x_in1
+::xi2_out > ::x_in1
+5.802843934142499E15 * ::iL2_out + 1.50487086025779277E18 * ::vC2_out + 1.1659847745013369E22 * ::xi2_out - 2.868232815898616E20 == 0
 ===========================================================================
 ..Converter2:::EXIT
 ::time == orig(::time)
 ::iL2_out == orig(::iL2_out)
 ::vC2_out == orig(::vC2_out)
 ::xpu2_out == orig(::xpu2_out)
-::vest2_out == orig(::vest2_out)
-::west2_out == orig(::west2_out)
+::xvo2_out == orig(::xvo2_out)
+::xpi2_out == orig(::xpi2_out)
+::xmc2_out == orig(::xmc2_out)
+::xi2_out == orig(::xi2_out)
 ::x_in1 == orig(::x_in1)
-::x_in2 == orig(::x_in2)
-::x_in3 == orig(::x_in3)
-::west2_out != 0
-::west2_out >= -0.027444
-::time != ::vC2_out
-::time > ::xpu2_out
-::time != ::vest2_out
-::time > ::west2_out
-::time >= ::x_in1
-::time >= ::x_in3
-::time >= orig(::xpu2_out)
-::time >= orig(::west2_out)
-::iL2_out != ::vC2_out
+::xpi2_out one of { 0.50993, 0.50999, 0.51005 }
+::xmc2_out == 2.401
+::time < ::iL2_out
+::time < ::vC2_out
+::time != ::xpu2_out
+::time != ::xvo2_out
+::time < ::xpi2_out
+::time < ::xmc2_out
+::time != ::x_in1
+::iL2_out < ::vC2_out
 ::iL2_out > ::xpu2_out
-::iL2_out > ::west2_out
-::iL2_out >= ::x_in1
-::iL2_out >= ::x_in3
-::iL2_out >= orig(::xpu2_out)
-::iL2_out >= orig(::west2_out)
+::iL2_out > ::xvo2_out
+::iL2_out > ::xpi2_out
+::iL2_out > ::xmc2_out
+::iL2_out > ::xi2_out
+::iL2_out > ::x_in1
 ::vC2_out > ::xpu2_out
-::vC2_out >= ::vest2_out
-::vC2_out > ::west2_out
-::vC2_out >= ::x_in1
-::vC2_out >= ::x_in2
-::vC2_out >= ::x_in3
-2.2895645038036235E67 * ::vC2_out - 2.2895645038036235E67 * orig(::vC2_out) - 2.813874775174653E15 == 0
-::vC2_out >= orig(::xpu2_out)
-::vC2_out >= orig(::vest2_out)
-::vC2_out >= orig(::west2_out)
-::xpu2_out != ::vest2_out
-::xpu2_out > ::west2_out
-::xpu2_out >= ::x_in3
-::xpu2_out <= orig(::iL2_out)
-::xpu2_out <= orig(::vC2_out)
-8.802570127549133E68 * ::xpu2_out - 8.802570127549133E68 * orig(::xpu2_out) - 2.38012693678801E14 == 0
-::xpu2_out >= orig(::west2_out)
-::vest2_out > ::west2_out
-::vest2_out >= ::x_in1
-::vest2_out >= ::x_in2
-::vest2_out >= ::x_in3
-::vest2_out <= orig(::vC2_out)
-2.0529430278476435E82 * ::vest2_out - 2.0529430278476435E82 * orig(::vest2_out) - 1.059010660915207E15 == 0
-::vest2_out >= orig(::west2_out)
-::west2_out <= orig(::iL2_out)
-::west2_out <= orig(::vC2_out)
-::west2_out <= orig(::xpu2_out)
-::west2_out <= orig(::vest2_out)
-1.5163301812110723E85 * ::west2_out - 1.5163301812110723E85 * orig(::west2_out) - 4.186890896360013E15 == 0
-::x_in1 <= ::x_in2
-::x_in1 >= ::x_in3
-::x_in1 <= orig(::iL2_out)
-::x_in1 <= orig(::vC2_out)
-::x_in1 <= orig(::vest2_out)
-::x_in2 >= ::x_in3
-::x_in2 <= orig(::vC2_out)
-::x_in2 <= orig(::vest2_out)
-::x_in3 <= orig(::iL2_out)
-::x_in3 <= orig(::vC2_out)
-::x_in3 <= orig(::xpu2_out)
-::x_in3 <= orig(::vest2_out)
+::vC2_out > ::xvo2_out
+::vC2_out > ::xpi2_out
+::vC2_out > ::xmc2_out
+::vC2_out > ::xi2_out
+::vC2_out > ::x_in1
+::xpu2_out > ::xvo2_out
+::xpu2_out < ::xpi2_out
+::xpu2_out < ::xmc2_out
+::xpu2_out < ::xi2_out
+::xvo2_out < ::xpi2_out
+::xvo2_out < ::xmc2_out
+::xvo2_out < ::xi2_out
+::xvo2_out < ::x_in1
+::xpi2_out < ::xmc2_out
+::xpi2_out > ::xi2_out
+::xpi2_out > ::x_in1
+::xmc2_out > ::xi2_out
+::xmc2_out > ::x_in1
+::xi2_out > ::x_in1
+5.802843934142499E15 * ::iL2_out + 1.50487086025779277E18 * ::vC2_out + 1.1659847745013369E22 * ::xi2_out - 2.868232815898616E20 == 0
 Exiting Daikon.
+                                                                               

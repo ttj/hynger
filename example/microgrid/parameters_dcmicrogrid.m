@@ -25,7 +25,7 @@ option_sim = 0  % set this option = 1 if you want to automatically simulate
 % the model and plot the results
 
 % scenario: 0 = startup, 1 = steady state
-opt_scenario = 0;
+opt_scenario = 1;
 
 Fs = 15000; % control frequency, hertz
 
@@ -133,7 +133,7 @@ if opt_scenario == 0
 	xpi2_0 = 0;
 % steady state
 elseif opt_scenario == 1
-	Tmax = 2;%0.25
+	Tmax = 0.05;%0.25
 	
 	% attack parameters
 	time_attack = 0.6;
