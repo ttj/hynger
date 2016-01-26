@@ -111,7 +111,7 @@ a2v2 = Pmc*a2xpi2;
 % initial conditions
 % startup
 if opt_scenario == 0
-	Tmax = 2;
+	Tmax = 0.6;
 	
 	t_0 = 0;
 	iL1_0 = 0;
