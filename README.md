@@ -10,15 +10,31 @@ Steven Drager
 [Hynger Homepage](http://verivital.com/hynger/)
 
 Publications:
-Taylor T. Johnson, Stanley Bak, Steven Drager, "Cyber-Physical Specification Mismatch Identification with Dynamic Analysis", In 6th International Conference on Cyber-Physical Systems (ICCPS 2015), ACM/IEEE, Seattle, Washington, April 2015. [PDF](http://www.taylortjohnson.com/research/johnson2015iccps.pdf)
+* Taylor T. Johnson, Stanley Bak, Steven Drager, "Cyber-Physical Specification Mismatch Identification with Dynamic Analysis", In 6th International Conference on Cyber-Physical Systems (ICCPS 2015), ACM/IEEE, Seattle, Washington, April 2015. [PDF](http://www.taylortjohnson.com/research/johnson2015iccps.pdf)
 
 INSTALLATION:
 
-1) Clone the Hynger repository:
+1. Clone the Hynger repository:
 
+
+```
 hg clone https://bitbucket.org/verivital/hynger
+```
 
-2) [Download Daikon](http://plse.cs.washington.edu/daikon/download/) and put daikon\daikon.jar at the path:
+As some large trace files were committed in earlier versions, if hg has some problems you may try:
+
+```
+hg clone https://bitbucket.org/verivital/hynger -r 10
+cd hynger/
+hg pull -r 100
+hg pull -r 20
+hg pull -r 30
+hg pull -r 40
+hg update
+hg fetch
+```
+
+2. [Download Daikon](http://plse.cs.washington.edu/daikon/download/) and put daikon\daikon.jar at the path:
 
 hynger\lib\daikon.jar
 
@@ -36,7 +52,9 @@ RUNNING:
 
 1. From the 'src' directory, execute:
 
+```
 clear all ; hynger('buck_hvoltage_discrete', 1)
+```
 
 2. This should instrument the diagram, simulate it, creating the traces in the file:
 
@@ -49,7 +67,9 @@ daikon-output\output_buck_hvoltage_discrete.inv
 NOTES:
 * This will automatically try to call Daikon (specified by the second argument 1).  In case of problems using this (as the Matlab-to-Java interface is a little delicate and can cause Matlab to crash if the called Java program terminates with certain exit codes), you may try:
 
+```
 clear all ; hynger('buck_hvoltage_discrete', 0)
+```
 
 * The manual command to call Daikon from Matlab will then be printed to screen.
 
