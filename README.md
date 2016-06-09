@@ -1,4 +1,4 @@
-Hynger (HYbrid iNvariant GEneratoR)
+# Hynger (HYbrid iNvariant GEneratoR) #
 
 Hynger instruments Simulink/Stateflow (SLSF) block diagrams to generate textual log output files from SLSF simulations.  In particular, Hynger allows for integrating the Daikon invariant inference tool with SLSF diagrams.
 
