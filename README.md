@@ -1,20 +1,24 @@
+Hynger (HYbrid iNvariant GEneratoR)
+
+Hynger instruments Simulink/Stateflow (SLSF) block diagrams to generate textual log output files from SLSF simulations.  In particular, Hynger allows for integrating the Daikon invariant inference tool with SLSF diagrams.
+
 [Taylor Johnson](http://www.taylortjohnson.com)
 University of Texas at Arlington
 [Stanley Bak](http://www.stanleybak.com)
 Steven Drager
 
-Hynger (HYbrid iNvariant GEneratoR)
+[Hynger Homepage](http://verivital.com/hynger/)
 
-Hynger instruments Simulink/Stateflow (SLSF) block diagrams to generate textual log output files from SLSF simulations.  In particular, Hynger allows for integrating the Daikon invariant inference tool with SLSF diagrams.
-
-Hynger is described in a paper under review:
-
-Cyber-Physical Specification Mismatch Identification with Dynamic Analysis
-[Submission PDF](http://verivital.com/hynger/)
+Publications:
+Taylor T. Johnson, Stanley Bak, Steven Drager, "Cyber-Physical Specification Mismatch Identification with Dynamic Analysis", In 6th International Conference on Cyber-Physical Systems (ICCPS 2015), ACM/IEEE, Seattle, Washington, April 2015. [PDF](http://www.taylortjohnson.com/research/johnson2015iccps.pdf)
 
 INSTALLATION:
 
-[Download Daikon](http://plse.cs.washington.edu/daikon/download/) and put daikon\daikon.jar at the path:
+1) Clone the Hynger repository:
+
+hg clone https://bitbucket.org/verivital/hynger
+
+2) [Download Daikon](http://plse.cs.washington.edu/daikon/download/) and put daikon\daikon.jar at the path:
 
 hynger\lib\daikon.jar
 
