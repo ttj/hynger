@@ -5,12 +5,14 @@
 Hynger instruments Simulink/Stateflow (SLSF) block diagrams to generate textual log output files from SLSF simulations.  In particular, Hynger allows for integrating the Daikon invariant inference tool with SLSF diagrams.
 
 ## Contributors: ##
-* [Taylor Johnson](http://www.taylortjohnson.com), University of Texas at Arlington
+* [Taylor Johnson](http://www.taylortjohnson.com), Vanderbilt University
+* [Luan Viet Nguyen](https://luanvietnguyen.github.io), University of Texas at Arlington
 * [Stanley Bak](http://www.stanleybak.com), Air Force Research Lab
 * Steven Drager, Air Force Research Lab
 
 ## Publications: ##
 * Taylor T. Johnson, Stanley Bak, Steven Drager, "Cyber-Physical Specification Mismatch Identification with Dynamic Analysis", In 6th International Conference on Cyber-Physical Systems (ICCPS 2015), ACM/IEEE, Seattle, Washington, April 2015. [PDF](http://www.taylortjohnson.com/research/johnson2015iccps.pdf)
+* Luan Viet Nguyen, Khaza Hoque, Stanley Bak, Steven Drager, Taylor T. Johnson, "Cyber-Physical Specification Mismatches", In ACM Transactions on Cyber-Physical Systems (TCPS), 2018. [PDF](http://www.taylortjohnson.com/research/nguyen2018tcps.pdf)
 
 ## INSTALLATION: ##
 
